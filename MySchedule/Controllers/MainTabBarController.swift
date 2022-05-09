@@ -16,8 +16,8 @@ class MainTabBarController: UITabBarController {
         setupTabBar()
         
     }
-    
-    func setupTabBar() {
+
+    private func setupTabBar() {
         let scheduleVC = createNavController(vc: ScheduleVC(), itemName: "Schedule", itemImage: "calendar.badge.clock")
         let tasksVC = createNavController(vc: TasksVC(), itemName: "Tasks", itemImage: "text.badge.checkmark")
         let contactsVC = createNavController(vc: ContactsVC(), itemName: "Contacts", itemImage: "rectangle.stack.person.crop")
@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = [scheduleVC, tasksVC, contactsVC]
     }
 
-    func createNavController(vc: UIViewController, itemName: String, itemImage: String) -> UINavigationController {
+    private func createNavController(vc: UIViewController, itemName: String, itemImage: String) -> UINavigationController {
         
         //MARK: - create NavItem
         let image = UIImage(systemName: itemImage)?.withAlignmentRectInsets(.init(top: -1, left: 0, bottom: 0, right: 0))
