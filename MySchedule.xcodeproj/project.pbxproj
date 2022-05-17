@@ -10,6 +10,8 @@
 		29F3AD072FD2B0A15A028535 /* Pods_MyScheduleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784BD3F25F313778398DC624 /* Pods_MyScheduleTests.framework */; };
 		8B29B19458F340097C9D251F /* Pods_MySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F4A55299691685250D722D /* Pods_MySchedule.framework */; };
 		AEFFC09CBFA3D1A42063A000 /* Pods_MySchedule_MyScheduleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19328B3D191E54D230930E44 /* Pods_MySchedule_MyScheduleUITests.framework */; };
+		FA01356D2833AEBB00D05714 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01356C2833AEBB00D05714 /* UIStackView.swift */; };
+		FA01356F2833CCF700D05714 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01356E2833CCF700D05714 /* UILabel.swift */; };
 		FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
@@ -51,6 +53,8 @@
 		BF35FD6FD3D6E8D98F65000E /* Pods-MyScheduleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyScheduleTests.release.xcconfig"; path = "Target Support Files/Pods-MyScheduleTests/Pods-MyScheduleTests.release.xcconfig"; sourceTree = "<group>"; };
 		E7A4723562AD420FC4A00DD2 /* Pods-MySchedule-MyScheduleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySchedule-MyScheduleUITests.debug.xcconfig"; path = "Target Support Files/Pods-MySchedule-MyScheduleUITests/Pods-MySchedule-MyScheduleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2058C170DD314C9A48130CF /* Pods-MySchedule-MyScheduleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySchedule-MyScheduleUITests.release.xcconfig"; path = "Target Support Files/Pods-MySchedule-MyScheduleUITests/Pods-MySchedule-MyScheduleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FA01356C2833AEBB00D05714 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		FA01356E2833CCF700D05714 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FA01356A2833AE8B00D05714 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA01356B2833AEA900D05714 /* UIKIt */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA01356B2833AEA900D05714 /* UIKIt */ = {
+			isa = PBXGroup;
+			children = (
+				FA01356C2833AEBB00D05714 /* UIStackView.swift */,
+				FA01356E2833CCF700D05714 /* UILabel.swift */,
+			);
+			path = UIKIt;
+			sourceTree = "<group>";
+		};
 		FA5FE86A2832AEAE00D03C41 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +178,7 @@
 				FA85E17428284D2800126A5B /* Controllers */,
 				FA85E17328284D2000126A5B /* View */,
 				FA85E17228284D1900126A5B /* Model */,
+				FA01356A2833AE8B00D05714 /* Extensions */,
 				FA85E17128284D0E00126A5B /* Resources */,
 			);
 			path = MySchedule;
@@ -465,6 +487,8 @@
 				FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */,
 				FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */,
 				FA85E177282850D200126A5B /* ScheduleVC.swift in Sources */,
+				FA01356D2833AEBB00D05714 /* UIStackView.swift in Sources */,
+				FA01356F2833CCF700D05714 /* UILabel.swift in Sources */,
 				FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */,
 				FA85E179282850E500126A5B /* TasksVC.swift in Sources */,
 				FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */,
