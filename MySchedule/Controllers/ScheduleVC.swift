@@ -98,12 +98,21 @@ extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
-//        cell.textLabel!.text = "cell"
+        
+        switch indexPath.row {
+            case 0: cell.backgroundColor = .systemGreen
+            case 1: cell.backgroundColor = .orange
+            case 2: cell.backgroundColor = .systemGray2
+            case 3: cell.backgroundColor = .systemYellow
+            default:
+            cell.backgroundColor = .yellow
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 80
     }
 }
 
@@ -149,8 +158,8 @@ extension ScheduleVC {
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -15),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
