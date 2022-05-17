@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F4958470-D75A-469E-B9E6-8798FA62212F"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4EEF5AFA-11C8-4A26-B43A-006D0075A9B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MySchedule/Controllers/TasksVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "TasksVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4EEF5AFA-11C8-4A26-B43A-006D0075A9B4 - e9672e030604c8f5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySchedule.TasksVC.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MySchedule.TasksVC"
+                  moduleName = "MySchedule"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/swift/MySchedule/MySchedule/Controllers/TasksVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "4EEF5AFA-11C8-4A26-B43A-006D0075A9B4 - d1e725d4e7d3c485"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySchedule.TasksVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MySchedule.TasksVC"
+                  moduleName = "MySchedule"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/swift/MySchedule/MySchedule/Controllers/TasksVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "4EEF5AFA-11C8-4A26-B43A-006D0075A9B4 - c1d015076803517e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySchedule.TasksVC.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MySchedule.TasksVC&gt;"
+                  moduleName = "MySchedule"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/swift/MySchedule/MySchedule/Controllers/TasksVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "4EEF5AFA-11C8-4A26-B43A-006D0075A9B4 - d53cfc671727c112"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySchedule.TasksVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MySchedule.TasksVC&gt;"
+                  moduleName = "MySchedule"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/swift/MySchedule/MySchedule/Controllers/TasksVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "4EEF5AFA-11C8-4A26-B43A-006D0075A9B4 - 692991dd19c09cff"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MySchedule.TasksVC.__deallocating_deinit"
+                  moduleName = "MySchedule"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/swift/MySchedule/MySchedule/Controllers/TasksVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

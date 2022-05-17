@@ -28,6 +28,14 @@ class ScheduleVC: UIViewController {
         return button
     }()
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    let idScheduleCell = "idScheduleCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,8 +44,11 @@ class ScheduleVC: UIViewController {
         
         calendar.delegate = self
         calendar.dataSource = self
-        
         calendar.scope = .week
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: idScheduleCell)
         
         setConstraints()
         swipeAction()
@@ -79,6 +90,19 @@ class ScheduleVC: UIViewController {
     }
 }
 
+//MARK: -
+extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
+        cell.textLabel!.text = "cell"
+        return cell
+    }
+}
+
 //MARK: - FSCalendarDataSource, FSCalendarDelegate
 extension ScheduleVC: FSCalendarDataSource, FSCalendarDelegate {
     
@@ -115,6 +139,15 @@ extension ScheduleVC {
             showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             showHideButton.widthAnchor.constraint(equalToConstant: 100),
             showHideButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        //MARK: - config for tableView
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  15),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
