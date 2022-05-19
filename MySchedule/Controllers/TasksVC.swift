@@ -27,6 +27,15 @@ class TasksVC: UIViewController {
         return button
     }()
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.bounces = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    let idTasksCell = "idTasksCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,8 +44,11 @@ class TasksVC: UIViewController {
         
         calendar.delegate = self
         calendar.dataSource = self
-        
         calendar.scope = .week
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TasksTableViewCell.self, forCellReuseIdentifier: idTasksCell)
         
         setConstraints()
         swipeAction()
@@ -78,6 +90,22 @@ class TasksVC: UIViewController {
     }
 }
 
+extension TasksVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) as! TasksTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+}
+
 //MARK: - FSCalendarDataSource, FSCalendarDelegate
 extension TasksVC: FSCalendarDataSource, FSCalendarDelegate {
     
@@ -114,6 +142,15 @@ extension TasksVC {
             showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             showHideButton.widthAnchor.constraint(equalToConstant: 100),
             showHideButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        //MARK: - config for tableView
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 }

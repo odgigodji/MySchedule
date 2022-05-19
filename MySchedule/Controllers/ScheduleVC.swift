@@ -30,6 +30,7 @@ class ScheduleVC: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.bounces = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -90,7 +91,7 @@ class ScheduleVC: UIViewController {
     }
 }
 
-//MARK: -
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 5
@@ -99,14 +100,14 @@ extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
         
-        switch indexPath.row {
-            case 0: cell.backgroundColor = .systemGreen
-            case 1: cell.backgroundColor = .orange
-            case 2: cell.backgroundColor = .systemGray2
-            case 3: cell.backgroundColor = .systemYellow
-            default:
-            cell.backgroundColor = .yellow
-        }
+//        switch indexPath.row {
+//            case 0: cell.backgroundColor = .systemGreen
+//            case 1: cell.backgroundColor = .systemBlue
+//            case 2: cell.backgroundColor = .systemOrange
+//            case 3: cell.backgroundColor = .systemYellow
+//            default:
+//            cell.backgroundColor = .yellow
+//        }
         
         return cell
     }

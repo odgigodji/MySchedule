@@ -9,6 +9,7 @@ import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
     
+    //MARK: - labels on Cell init
     let lessonName = UILabel(text: "Программирование", font: .avenirNextDemiBold20())
     let teacherName = UILabel(text: "Антонов Антон Александровия", font: .avenirNext20(), alignment: .right)
     let lessonTime = UILabel(text: "08:00", font: .avenirNextDemiBold20())
@@ -23,12 +24,16 @@ class ScheduleTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setConstrains()
+        
+        //MARK: - off selection cells
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Set constraints for subviews on cell
     func setConstrains() {
         let topStackView = UIStackView(arrangedSubviews: [lessonName, teacherName], axis: .horizontal, spacing: 10, distribution: .fillEqually)
         let bottomStackView = UIStackView(arrangedSubviews: [typeLabel, lessonTime, lessonType, buildingLabel, lessonBuilding, audLabel, lessonAud], axis: .horizontal, spacing: 5, distribution: .fillProportionally)
