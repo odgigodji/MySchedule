@@ -27,15 +27,25 @@ class TasksTableViewCell: UITableViewCell {
         
         //MARK: - off selection cells
         self.selectionStyle = .none
+        
+        //MARK: - number of lines of task description
+        taskDescription.numberOfLines = 2
+        
+        readyButton.addTarget(self, action: #selector(readyButtonTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc func readyButtonTapped() {
+        readyButton.tintColor = .green
+        print("tap")
+    }
+    
     //MARK: - Set constraints for subviews on cell
     func setConstrains() {
-        addSubview(readyButton)
+        self.contentView.addSubview(readyButton)
         NSLayoutConstraint.activate([
             readyButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             readyButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
@@ -43,7 +53,7 @@ class TasksTableViewCell: UITableViewCell {
             readyButton.widthAnchor.constraint(equalToConstant: 40)
         ])
         
-        addSubview(taskName)
+        self.addSubview(taskName)
         NSLayoutConstraint.activate([
             taskName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             taskName.trailingAnchor.constraint(equalTo: readyButton.leadingAnchor, constant: -5),
@@ -51,7 +61,7 @@ class TasksTableViewCell: UITableViewCell {
             taskName.heightAnchor.constraint(equalToConstant: 25)
         ])
         
-        addSubview(taskDescription)
+        self.addSubview(taskDescription)
         NSLayoutConstraint.activate([
             taskDescription.topAnchor.constraint(equalTo: taskName.bottomAnchor, constant: -5),
             taskDescription.trailingAnchor.constraint(equalTo: readyButton.leadingAnchor, constant: -5),
