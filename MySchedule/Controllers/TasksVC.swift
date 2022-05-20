@@ -90,6 +90,7 @@ class TasksVC: UIViewController {
     }
 }
 
+//MARK: - FSCalendarDataSource, FSCalendarDelegate
 extension TasksVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 5
@@ -97,12 +98,20 @@ extension TasksVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) as! TasksTableViewCell
-        
+        cell.cellTaskDelegate = self
+        cell.index = indexPath
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+}
+
+//MARK: - PressReadyTaskButtonProtocol
+extension TasksVC: PressReadyTaskButtonProtocol {
+    func readyButtonTapped(indexPath: IndexPath) {
+        print("TAP")
     }
 }
 

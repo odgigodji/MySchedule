@@ -20,6 +20,9 @@ class TasksTableViewCell: UITableViewCell {
         return button
     }()
     
+    weak var cellTaskDelegate: PressReadyTaskButtonProtocol?
+    var index: IndexPath?
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -39,8 +42,8 @@ class TasksTableViewCell: UITableViewCell {
     }
     
     @objc func readyButtonTapped() {
-        readyButton.tintColor = .green
-        print("tap")
+        guard let index = index else { return }
+        cellTaskDelegate?.readyButtonTapped(indexPath: index)
     }
     
     //MARK: - Set constraints for subviews on cell
