@@ -15,8 +15,9 @@ class OptionsShadowTableVC : UITableViewController {
         super.viewDidLoad()
         
         title = "Option Schedule"
-        view.backgroundColor = .white
         
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .systemGray4
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsShadowCell)
@@ -39,7 +40,11 @@ class OptionsShadowTableVC : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsShadowCell, for: indexPath) as! OptionsTableViewCell
-        cell.textLabel!.text = " asdf "
         return cell
+    }
+    
+    //MARK: - set height of the cell
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
     }
 }
