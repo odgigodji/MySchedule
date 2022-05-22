@@ -16,7 +16,8 @@
 		FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0135732836DDF900D05714 /* TasksTableViewCell.swift */; };
 		FA0135772837903F00D05714 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0135762837903F00D05714 /* PressButtonProtocols.swift */; };
 		FA06D2D7283A84F700F683BB /* Goals in Resources */ = {isa = PBXBuildFile; fileRef = FA06D2D6283A84F700F683BB /* Goals */; };
-		FA06D2D9283A871100F683BB /* OptionsShadowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2D8283A871100F683BB /* OptionsShadowVC.swift */; };
+		FA06D2D9283A871100F683BB /* OptionsShadowTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2D8283A871100F683BB /* OptionsShadowTableVC.swift */; };
+		FA06D2E3283A921500F683BB /* OptionsShadowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E2283A921500F683BB /* OptionsShadowTableViewCell.swift */; };
 		FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
@@ -64,7 +65,8 @@
 		FA0135732836DDF900D05714 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		FA0135762837903F00D05714 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		FA06D2D6283A84F700F683BB /* Goals */ = {isa = PBXFileReference; lastKnownFileType = text; path = Goals; sourceTree = "<group>"; };
-		FA06D2D8283A871100F683BB /* OptionsShadowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsShadowVC.swift; sourceTree = "<group>"; };
+		FA06D2D8283A871100F683BB /* OptionsShadowTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsShadowTableVC.swift; sourceTree = "<group>"; };
+		FA06D2E2283A921500F683BB /* OptionsShadowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsShadowTableViewCell.swift; sourceTree = "<group>"; };
 		FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,7 +165,7 @@
 		FA06D2DA283A871D00F683BB /* Shadow */ = {
 			isa = PBXGroup;
 			children = (
-				FA06D2D8283A871100F683BB /* OptionsShadowVC.swift */,
+				FA06D2D8283A871100F683BB /* OptionsShadowTableVC.swift */,
 			);
 			path = Shadow;
 			sourceTree = "<group>";
@@ -192,11 +194,36 @@
 			path = Contacts;
 			sourceTree = "<group>";
 		};
-		FA5FE86A2832AEAE00D03C41 /* Cell */ = {
+		FA06D2DE283A91CF00F683BB /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */,
+				FA06D2E2283A921500F683BB /* OptionsShadowTableViewCell.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		FA06D2E0283A91DE00F683BB /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		FA06D2E1283A91E700F683BB /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
 				FA0135732836DDF900D05714 /* TasksTableViewCell.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		FA5FE86A2832AEAE00D03C41 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA06D2DE283A91CF00F683BB /* Schedule */,
+				FA06D2E1283A91E700F683BB /* Tasks */,
+				FA06D2E0283A91DE00F683BB /* Contacts */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -540,9 +567,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA06D2E3283A921500F683BB /* OptionsShadowTableViewCell.swift in Sources */,
 				FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */,
 				FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */,
-				FA06D2D9283A871100F683BB /* OptionsShadowVC.swift in Sources */,
+				FA06D2D9283A871100F683BB /* OptionsShadowTableVC.swift in Sources */,
 				FA85E177282850D200126A5B /* ScheduleVC.swift in Sources */,
 				FA01356D2833AEBB00D05714 /* UIStackView.swift in Sources */,
 				FA01356F2833CCF700D05714 /* UILabel.swift in Sources */,

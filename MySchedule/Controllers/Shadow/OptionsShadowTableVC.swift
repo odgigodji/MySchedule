@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OptionsShadowVC : UITableViewController {
+class OptionsShadowTableVC : UITableViewController {
     
     let idOptionsShadowCell = "idOptionsShadowCell"
     
@@ -19,7 +19,7 @@ class OptionsShadowVC : UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: idOptionsShadowCell)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsShadowCell)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +38,7 @@ class OptionsShadowVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsShadowCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsShadowCell, for: indexPath) as! OptionsTableViewCell
         cell.textLabel!.text = " asdf "
         return cell
     }
