@@ -60,7 +60,7 @@ class ScheduleVC: UIViewController {
     }
     
     @objc func addButtonTapped() {
-        let scheduleOption = OptionShadowVC()
+        let scheduleOption = OptionsShadowVC()
         navigationController?.pushViewController(scheduleOption, animated: true)
     }
     
