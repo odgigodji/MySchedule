@@ -75,7 +75,6 @@ class TasksVC: UIViewController {
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeDown.direction = .down
         calendar.addGestureRecognizer(swipeDown)
-
     }
     
     @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
@@ -111,6 +110,7 @@ extension TasksVC: UITableViewDelegate, UITableViewDataSource {
 //MARK: - PressReadyTaskButtonProtocol
 extension TasksVC: PressReadyTaskButtonProtocol {
     func readyButtonTapped(indexPath: IndexPath) {
+//        readyButton.tintColor = readyButton.tintColor == .black ? .green : .black
         print("TAP")
     }
 }
