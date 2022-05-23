@@ -12,6 +12,7 @@ class OptionsScheduleTableVC : UITableViewController {
     let idOptionsScheduleCell = "idOptionsShadowCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +55,7 @@ class OptionsScheduleTableVC : UITableViewController {
     //MARK: - set header in table view
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionsScheduleTableViewCell
+        header.configure(section: section)
         return header
     }
     
