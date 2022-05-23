@@ -14,6 +14,9 @@ class HeaderOptionsScheduleTableViewCell: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
+        headerLabel.textColor = .darkGray
+        self.contentView.backgroundColor = .ultraLightGray()
+        
         setConstraints()
     }
     

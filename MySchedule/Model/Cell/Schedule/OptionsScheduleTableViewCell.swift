@@ -51,7 +51,7 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         self.addSubview(nameCellLabel)
         NSLayoutConstraint.activate([
             nameCellLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            nameCellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 10),
+            nameCellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 18),
         ])
     }
 }

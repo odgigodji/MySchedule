@@ -16,9 +16,9 @@ class OptionsScheduleTableVC : UITableViewController {
         super.viewDidLoad()
         
         title = "Option Schedule"
+        tableView.backgroundColor = .ultraLightGray()
         
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .systemGray4
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
