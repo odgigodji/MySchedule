@@ -1,5 +1,5 @@
 //
-//  OptionsShadowVC.swift
+//  OptionsScheduleVC.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 22.05.2022.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class OptionsShadowTableVC : UITableViewController {
+class OptionsScheduleTableVC : UITableViewController {
     
-    let idOptionsShadowCell = "idOptionsShadowCell"
+    let idOptionsScheduleCell = "idOptionsShadowCell"
+    let idOptionsScheduleHeader = "idOptionsScheduleHeader"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class OptionsShadowTableVC : UITableViewController {
         tableView.backgroundColor = .systemGray4
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsShadowCell)
+        tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,12 +40,23 @@ class OptionsShadowTableVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsShadowCell, for: indexPath) as! OptionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsScheduleTableViewCell
         return cell
     }
     
     //MARK: - set height of the cell
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
+    }
+    
+    
+    //MARK: - set header in table view
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader)
+        return header
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
     }
 }
