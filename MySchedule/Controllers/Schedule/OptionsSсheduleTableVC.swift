@@ -61,6 +61,6 @@ class OptionsScheduleTableVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        50
+        40
     }
 }

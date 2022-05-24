@@ -27,6 +27,10 @@ class OptionsScheduleTableViewCell: UITableViewCell {
     
     let repeatSwitch: UISwitch = {
         let repeatSwitch = UISwitch()
+        repeatSwitch.isOn = true
+        repeatSwitch.isHidden = true
+        repeatSwitch.onTintColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
+        repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()
     
@@ -38,11 +42,13 @@ class OptionsScheduleTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .clear
         setConstrains()
         
+        backgroundColor = .clear
         //MARK: - off selection cells
         self.selectionStyle = .none
+        
+        repeatSwitch.addTarget(self, action: #selector(switchChange(paramTarget:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -54,6 +60,18 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         
         if indexPath == [3, 0] {
             backgroundViewCell.backgroundColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
+        }
+        
+        if indexPath == [4, 0] {
+            repeatSwitch.isHidden = false
+        }
+    }
+    
+    @objc func switchChange(paramTarget: UISwitch) {
+        if paramTarget.isOn {
+            print("On")
+        } else {
+            print("OFf")
         }
     }
     
@@ -71,6 +89,12 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameCellLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             nameCellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 18),
+        ])
+        
+        self.contentView.addSubview(repeatSwitch)
+        NSLayoutConstraint.activate([
+            repeatSwitch.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            repeatSwitch.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -20)
         ])
     }
 }
