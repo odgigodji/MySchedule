@@ -34,7 +34,7 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         return repeatSwitch
     }()
     
-    let cellNameArray = [["Время", "Дата"],
+    let cellNameArray = [["Дата", "Время"],
                          ["Имя", "Тип", "Корпус", "Аудитория"],
                          ["Teacher's name"],
                          [""],
