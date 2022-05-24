@@ -14,7 +14,6 @@ class ScheduleVC: UIViewController {
     
     private var calendar : FSCalendar = {
         let calendar = FSCalendar()
-        
         calendar.translatesAutoresizingMaskIntoConstraints = false
         return calendar
     }()

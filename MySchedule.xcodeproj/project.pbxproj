@@ -21,6 +21,7 @@
 		FA06D2E5283BC13800F683BB /* HeaderOptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E4283BC13700F683BB /* HeaderOptionsScheduleTableViewCell.swift */; };
 		FA0E3EEC283BEA820094FE3F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E3EEB283BEA820094FE3F /* UIColor.swift */; };
 		FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */; };
+		FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681282283CEF6D00F78251 /* AlertDate.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
 		FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E145282841DD00126A5B /* MainTabBarController.swift */; };
@@ -72,6 +73,7 @@
 		FA06D2E4283BC13700F683BB /* HeaderOptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		FA0E3EEB283BEA820094FE3F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		FA681282283CEF6D00F78251 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA85E143282841DD00126A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +229,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		FA681281283CEF5A00F78251 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FA681282283CEF6D00F78251 /* AlertDate.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		FA85E135282841DD00126A5B = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +264,6 @@
 			children = (
 				FA85E17528284E9600126A5B /* Appllication */,
 				FA85E17428284D2800126A5B /* Controllers */,
-				FA85E17328284D2000126A5B /* View */,
 				FA85E17228284D1900126A5B /* Model */,
 				FA01356A2833AE8B00D05714 /* Extensions */,
 				FA0135752837902100D05714 /* Protocols */,
@@ -294,16 +303,10 @@
 		FA85E17228284D1900126A5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA681281283CEF5A00F78251 /* Alert */,
 				FA5FE86A2832AEAE00D03C41 /* Cell */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FA85E17328284D2000126A5B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FA85E17428284D2800126A5B /* Controllers */ = {
@@ -580,6 +583,7 @@
 				FA0135722833E90A00D05714 /* UIFont.swift in Sources */,
 				FA85E17B282850F800126A5B /* ContactsVC.swift in Sources */,
 				FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */,
+				FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */,
 				FA0135772837903F00D05714 /* PressButtonProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
