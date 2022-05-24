@@ -87,9 +87,18 @@ class OptionsScheduleTableVC : UITableViewController {
         case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
             
             
-            //MARK: -
+        //MARK: - Teacher's section
+        case [2, 0]:
+            let teachers = TeachersVC()
+            navigationController?.pushViewController(teachers, animated: true)
+            
+        //MARK: - Color's section
+        case [3, 0]:
+            let colors = ScheduleColorVC()
+            navigationController?.pushViewController(colors, animated: true)
+            
         default:
-            print("error")
+            print("Tap OptionsTableView")
         }
     }
 }
