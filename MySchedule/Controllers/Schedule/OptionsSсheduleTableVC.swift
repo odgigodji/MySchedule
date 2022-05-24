@@ -12,14 +12,16 @@ class OptionsScheduleTableVC : UITableViewController {
     let idOptionsScheduleCell = "idOptionsShadowCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"
     
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - style for Opotion Scheduole TableVC
         title = "Option Schedule"
         tableView.backgroundColor = .ultraLightGray()
-        
         tableView.separatorStyle = .none
+        tableView.bounces = false
+        
+        //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
@@ -86,7 +88,6 @@ class OptionsScheduleTableVC : UITableViewController {
         case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
         case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
             
-            
         //MARK: - Teacher's section
         case [2, 0]: pushControllers(viewController: TeachersVC())
             
@@ -102,6 +103,5 @@ class OptionsScheduleTableVC : UITableViewController {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)
-        
     }
 }
