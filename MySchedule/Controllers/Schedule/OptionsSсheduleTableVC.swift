@@ -19,7 +19,7 @@ class OptionsScheduleTableVC : UITableViewController {
         title = "Option Schedule"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
-        tableView.bounces = false
+//        tableView.bounces = false
         
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self

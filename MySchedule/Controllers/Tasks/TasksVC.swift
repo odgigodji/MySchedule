@@ -39,13 +39,16 @@ class TasksVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - customization TasksVC
         view.backgroundColor = .white
         title = "Tasks"
         
+        //MARK: - calendar delegate and dataSource
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scope = .week
         
+        //MARK: - tableView delegate dataSource and register Cell
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TasksTableViewCell.self, forCellReuseIdentifier: idTasksCell)

@@ -28,10 +28,8 @@ class TasksTableViewCell: UITableViewCell {
         
         setConstrains()
         
-        //MARK: - off selection cells
+        //MARK: - customization  cells
         self.selectionStyle = .none
-        
-        //MARK: - number of lines of task description
         taskDescription.numberOfLines = 2
         
         readyButton.addTarget(self, action: #selector(readyButtonTapped), for: .touchUpInside)
@@ -42,8 +40,8 @@ class TasksTableViewCell: UITableViewCell {
     }
     
     @objc func readyButtonTapped() {
-//        readyButton.tintColor = readyButton.tintColor == .black ? .green : .black
-//        print("tap")
+        readyButton.tintColor = readyButton.tintColor == .black ? .green : .black
+        
         guard let index = index else { return }
         cellTaskDelegate?.readyButtonTapped(indexPath: index)
     }
