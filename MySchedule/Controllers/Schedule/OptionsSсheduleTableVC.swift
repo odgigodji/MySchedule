@@ -88,17 +88,20 @@ class OptionsScheduleTableVC : UITableViewController {
             
             
         //MARK: - Teacher's section
-        case [2, 0]:
-            let teachers = TeachersVC()
-            navigationController?.pushViewController(teachers, animated: true)
+        case [2, 0]: pushControllers(viewController: TeachersVC())
             
         //MARK: - Color's section
-        case [3, 0]:
-            let colors = ScheduleColorVC()
-            navigationController?.pushViewController(colors, animated: true)
+        case [3, 0]: pushControllers(viewController: ScheduleColorVC())
             
         default:
             print("Tap OptionsTableView")
         }
+    }
+    
+    func pushControllers(viewController: UIViewController) {
+        let vc = viewController
+        navigationController?.navigationBar.topItem?.title = "Options"
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
