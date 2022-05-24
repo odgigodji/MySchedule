@@ -70,19 +70,24 @@ class OptionsScheduleTableVC : UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
         
         switch indexPath {
+        //MARK: - Date and Time section
         case [0, 0]:
             alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
             print(numberWeekday, date)
         }
         case [0, 1]:
             alertsTime(label: cell.nameCellLabel) { (date) in
-                print(date)
+            print(date)
         }
+            
+        //MARK: - Lesson's section
         case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name of lesson")
         case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type of lesson")
         case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
         case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
             
+            
+            //MARK: -
         default:
             print("error")
         }
