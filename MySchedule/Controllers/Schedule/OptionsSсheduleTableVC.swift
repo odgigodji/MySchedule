@@ -52,7 +52,6 @@ class OptionsScheduleTableVC : UITableViewController {
         return 44
     }
     
-    
     //MARK: - set header in table view
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionsScheduleTableViewCell
@@ -60,7 +59,20 @@ class OptionsScheduleTableVC : UITableViewController {
         return header
     }
     
+    //MARK: - heightForHeaderInSection
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         40
+    }
+    
+    //MARK: - didSelectRowAt
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath {
+        case [0, 0]:
+            print("CELL")
+        case [0, 1]:
+            print("CELL2")
+        default:
+            print("error")
+        }
     }
 }
