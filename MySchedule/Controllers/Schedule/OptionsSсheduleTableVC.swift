@@ -77,7 +77,12 @@ class OptionsScheduleTableVC : UITableViewController {
         case [0, 1]:
             alertsTime(label: cell.nameCellLabel) { (date) in
                 print(date)
-            }
+        }
+        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name of lesson")
+        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type of lesson")
+        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
+        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
+            
         default:
             print("error")
         }
