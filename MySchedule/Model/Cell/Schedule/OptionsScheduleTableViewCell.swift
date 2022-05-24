@@ -25,6 +25,11 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         return label
     }()
     
+    let repeatSwitch: UISwitch = {
+        let repeatSwitch = UISwitch()
+        return repeatSwitch
+    }()
+    
     let cellNameArray = [["Время", "Дата"],
                          ["Имя", "Тип", "Корпус", "Аудитория"],
                          ["Teacher's name"],
@@ -46,6 +51,10 @@ class OptionsScheduleTableViewCell: UITableViewCell {
     
     func configure(indexPath: IndexPath) {
         nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+        
+        if indexPath == [3, 0] {
+            backgroundViewCell.backgroundColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
+        }
     }
     
     //MARK: - Set constraints for subviews on cell
