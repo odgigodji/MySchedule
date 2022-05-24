@@ -26,6 +26,7 @@
 		FA681287283D342F00F78251 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681286283D342F00F78251 /* AlertForCellName.swift */; };
 		FA681289283D397700F78251 /* ScheduleColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681288283D397700F78251 /* ScheduleColorVC.swift */; };
 		FA68128B283D398F00F78251 /* TeachersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68128A283D398F00F78251 /* TeachersVC.swift */; };
+		FA68128D283D4D9F00F78251 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68128C283D4D9F00F78251 /* UIAlertController.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
 		FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E145282841DD00126A5B /* MainTabBarController.swift */; };
@@ -82,6 +83,7 @@
 		FA681286283D342F00F78251 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
 		FA681288283D397700F78251 /* ScheduleColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorVC.swift; sourceTree = "<group>"; };
 		FA68128A283D398F00F78251 /* TeachersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersVC.swift; sourceTree = "<group>"; };
+		FA68128C283D4D9F00F78251 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA85E143282841DD00126A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				FA01356E2833CCF700D05714 /* UILabel.swift */,
 				FA0135712833E90A00D05714 /* UIFont.swift */,
 				FA0E3EEB283BEA820094FE3F /* UIColor.swift */,
+				FA68128C283D4D9F00F78251 /* UIAlertController.swift */,
 			);
 			path = UIKIt;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				FA68128B283D398F00F78251 /* TeachersVC.swift in Sources */,
 				FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */,
 				FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */,
+				FA68128D283D4D9F00F78251 /* UIAlertController.swift in Sources */,
 				FA681287283D342F00F78251 /* AlertForCellName.swift in Sources */,
 				FA06D2D9283A871100F683BB /* OptionsSсheduleTableVC.swift in Sources */,
 				FA85E177282850D200126A5B /* ScheduleVC.swift in Sources */,
