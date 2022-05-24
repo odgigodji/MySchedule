@@ -25,6 +25,12 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         return label
     }()
     
+    let cellNameArray = [["Время", "Дата"],
+                         ["Имя", "Тип", "Корпус", "Аудитория"],
+                         ["Teacher's name"],
+                         [""],
+                         ["Повторять каждые 7 дней"]]
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
@@ -36,6 +42,10 @@ class OptionsScheduleTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(indexPath: IndexPath) {
+        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
     }
     
     //MARK: - Set constraints for subviews on cell
