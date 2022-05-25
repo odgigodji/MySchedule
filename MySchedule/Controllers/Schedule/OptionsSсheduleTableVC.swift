@@ -9,7 +9,7 @@ import UIKit
 
 class OptionsScheduleTableVC : UITableViewController {
     
-    let idOptionsScheduleCell = "idOptionsScheduleCell"
+    let idOptionsScheduleCell = "idOptionsCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"
     
     let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
