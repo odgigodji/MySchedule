@@ -9,8 +9,10 @@ import UIKit
 
 class OptionsScheduleTableVC : UITableViewController {
     
-    let idOptionsScheduleCell = "idOptionsShadowCell"
+    let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"
+    
+    let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class OptionsScheduleTableVC : UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionsScheduleTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,8 +58,8 @@ class OptionsScheduleTableVC : UITableViewController {
     
     //MARK: - set header in table view
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionsScheduleTableViewCell
-        header.configure(section: section)
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionsTableViewCell
+        header.configure(nameArray: headerNamesArray, section: section)
         return header
     }
     

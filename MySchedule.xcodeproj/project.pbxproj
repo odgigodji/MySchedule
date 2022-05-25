@@ -18,7 +18,7 @@
 		FA06D2D7283A84F700F683BB /* Goals in Resources */ = {isa = PBXBuildFile; fileRef = FA06D2D6283A84F700F683BB /* Goals */; };
 		FA06D2D9283A871100F683BB /* OptionsSсheduleTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2D8283A871100F683BB /* OptionsSсheduleTableVC.swift */; };
 		FA06D2E3283A921500F683BB /* OptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E2283A921500F683BB /* OptionsScheduleTableViewCell.swift */; };
-		FA06D2E5283BC13800F683BB /* HeaderOptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E4283BC13700F683BB /* HeaderOptionsScheduleTableViewCell.swift */; };
+		FA06D2E5283BC13800F683BB /* HeaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E4283BC13700F683BB /* HeaderOptionsTableViewCell.swift */; };
 		FA0E3EEC283BEA820094FE3F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E3EEB283BEA820094FE3F /* UIColor.swift */; };
 		FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */; };
 		FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681282283CEF6D00F78251 /* AlertDate.swift */; };
@@ -75,7 +75,7 @@
 		FA06D2D6283A84F700F683BB /* Goals */ = {isa = PBXFileReference; lastKnownFileType = text; path = Goals; sourceTree = "<group>"; };
 		FA06D2D8283A871100F683BB /* OptionsSсheduleTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionsSсheduleTableVC.swift"; sourceTree = "<group>"; };
 		FA06D2E2283A921500F683BB /* OptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
-		FA06D2E4283BC13700F683BB /* HeaderOptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		FA06D2E4283BC13700F683BB /* HeaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		FA0E3EEB283BEA820094FE3F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		FA681282283CEF6D00F78251 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
@@ -212,7 +212,6 @@
 			children = (
 				FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */,
 				FA06D2E2283A921500F683BB /* OptionsScheduleTableViewCell.swift */,
-				FA06D2E4283BC13700F683BB /* HeaderOptionsScheduleTableViewCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -235,6 +234,7 @@
 		FA5FE86A2832AEAE00D03C41 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				FA06D2E4283BC13700F683BB /* HeaderOptionsTableViewCell.swift */,
 				FA06D2DE283A91CF00F683BB /* Schedule */,
 				FA06D2E1283A91E700F683BB /* Tasks */,
 				FA06D2E0283A91DE00F683BB /* Contacts */,
@@ -599,7 +599,7 @@
 				FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */,
 				FA681285283D2B8D00F78251 /* AlertTime.swift in Sources */,
 				FA681289283D397700F78251 /* ScheduleColorVC.swift in Sources */,
-				FA06D2E5283BC13800F683BB /* HeaderOptionsScheduleTableViewCell.swift in Sources */,
+				FA06D2E5283BC13800F683BB /* HeaderOptionsTableViewCell.swift in Sources */,
 				FA0135722833E90A00D05714 /* UIFont.swift in Sources */,
 				FA85E17B282850F800126A5B /* ContactsVC.swift in Sources */,
 				FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */,

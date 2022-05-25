@@ -1,5 +1,5 @@
 //
-//  HeaderOptionsScheduleTableViewCell.swift
+//  HeaderOptionsTableViewCell.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 23.05.2022.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class HeaderOptionsScheduleTableViewCell: UITableViewHeaderFooterView {
+class HeaderOptionsTableViewCell: UITableViewHeaderFooterView {
    
     let headerLabel = UILabel(font: .avenirNext14())
     
     //MARK: - Names of headers
-    let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
+//    let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -27,8 +27,8 @@ class HeaderOptionsScheduleTableViewCell: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(section: Int) {
-        headerLabel.text = headerNamesArray[section]
+    func configure(nameArray: [String], section: Int) {
+        headerLabel.text = nameArray[section]
     }
     
     func setConstraints() {
