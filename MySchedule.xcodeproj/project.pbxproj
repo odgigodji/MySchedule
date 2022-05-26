@@ -30,6 +30,7 @@
 		FA68128F283E28FE00F78251 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68128E283E28FE00F78251 /* ColorTableViewCell.swift */; };
 		FA681291283E985D00F78251 /* OptionsTasksTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681290283E985C00F78251 /* OptionsTasksTableVC.swift */; };
 		FA681295283F6BF900F78251 /* ColorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681294283F6BF900F78251 /* ColorTableVC.swift */; };
+		FA681297283FD67600F78251 /* ContactsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681296283FD67600F78251 /* ContactsTableVC.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
 		FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E145282841DD00126A5B /* MainTabBarController.swift */; };
@@ -40,7 +41,6 @@
 		FA85E165282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E164282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift */; };
 		FA85E177282850D200126A5B /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E176282850D100126A5B /* ScheduleVC.swift */; };
 		FA85E179282850E500126A5B /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E178282850E500126A5B /* TasksVC.swift */; };
-		FA85E17B282850F800126A5B /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E17A282850F800126A5B /* ContactsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +90,7 @@
 		FA68128E283E28FE00F78251 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		FA681290283E985C00F78251 /* OptionsTasksTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTasksTableVC.swift; sourceTree = "<group>"; };
 		FA681294283F6BF900F78251 /* ColorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableVC.swift; sourceTree = "<group>"; };
+		FA681296283FD67600F78251 /* ContactsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableVC.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA85E143282841DD00126A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		FA85E164282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA85E176282850D100126A5B /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		FA85E178282850E500126A5B /* TasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
-		FA85E17A282850F800126A5B /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +209,8 @@
 		FA06D2DD283A875000F683BB /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				FA85E17A282850F800126A5B /* ContactsVC.swift */,
 				FA68128A283D398F00F78251 /* TeachersVC.swift */,
+				FA681296283FD67600F78251 /* ContactsTableVC.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -612,8 +612,8 @@
 				FA06D2E5283BC13800F683BB /* HeaderOptionsTableViewCell.swift in Sources */,
 				FA0135722833E90A00D05714 /* UIFont.swift in Sources */,
 				FA681295283F6BF900F78251 /* ColorTableVC.swift in Sources */,
+				FA681297283FD67600F78251 /* ContactsTableVC.swift in Sources */,
 				FA68128F283E28FE00F78251 /* ColorTableViewCell.swift in Sources */,
-				FA85E17B282850F800126A5B /* ContactsVC.swift in Sources */,
 				FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */,
 				FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */,
 				FA0135772837903F00D05714 /* PressButtonProtocols.swift in Sources */,
