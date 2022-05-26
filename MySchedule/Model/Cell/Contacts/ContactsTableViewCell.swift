@@ -20,7 +20,11 @@ class ContactsTableViewCell: UITableViewCell {
     
     let phoneImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "phone.fill")
+        
+        //MARK: - custom system image color
+        imageView.image = UIImage(systemName: "phone.fill")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = .systemBlue
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -63,6 +67,23 @@ class ContactsTableViewCell: UITableViewCell {
             contactImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             contactImageView.widthAnchor.constraint(equalToConstant: 70),
             contactImageView.heightAnchor.constraint(equalToConstant: 70)
+        ])
+        
+        self.addSubview(nameLabel)
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            nameLabel.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: 10),
+            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            nameLabel.heightAnchor.constraint(equalToConstant: 21)
+        ])
+        
+        let stackView = UIStackView(arrangedSubviews: [phoneImageView, phoneLabel, mailImageView, mailLabel], axis: .horizontal, spacing: 3, distribution: .fillProportionally)
+        self.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            stackView.heightAnchor.constraint(equalToConstant: 21)
         ])
     }
 }
