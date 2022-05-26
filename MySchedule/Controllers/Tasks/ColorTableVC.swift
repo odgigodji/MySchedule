@@ -1,45 +1,47 @@
 //
-//  OptionsTaskTableVC.swift
+//  ColorTaskTableVC.swift
 //  MySchedule
 //
-//  Created by Nikita Evdokimov on 25.05.2022.
+//  Created by Nikita Evdokimov on 26.05.2022.
 //
 
 import UIKit
 
-class OptionsTasksTableVC : UITableViewController {
+class ColorTaskTableVC : UITableViewController {
     
-    let idOptionsTaskCell = "idOptionsTaskCell"
+    let idTasksColorCell = "idOptionsTasksCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
     
-    let headerNamesArray = ["DATE", "LESSON", "TASK", "COLOR"]
+    let headerNamesArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: - style for Option Tasks TableVC
-        title = "Options Tasks"
+        //MARK: - style for Color Task TableVC
+        title = "Color Tasks"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
-        tableView.bounces = false
+//        tableView.bounces = false
         
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(OpitonsTasksTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
+        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idTasksColorCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsTasksHeader)
     }
     
+    //MARK: - num of Section
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 7
     }
     
+    //MARK: - num of row in section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OpitonsTasksTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksColorCell, for: indexPath) as! ColorTableViewCell
         cell.configure(indexPath: indexPath)
         return cell
     }
@@ -63,25 +65,6 @@ class OptionsTasksTableVC : UITableViewController {
     
     //MARK: - didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.cellForRow(at: indexPath) as! OpitonsTasksTableViewCell
-        
-        switch indexPath.section {
-        case 0: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
-        }
-        case 1: alertForCellName(label: cell.nameCellLabel, name: "Name Lesson", placeholder: "Enter name of lesson")
-        case 2: alertForCellName(label: cell.nameCellLabel, name: "Task", placeholder: "Enter name of lesson")
-        case 3: pushControllers(viewController: ColorTaskTableVC())
-        default:
-            print("Tap Color tab view")
-        }
-    }
-    
-    func pushControllers(viewController: UIViewController) {
-        let vc = viewController
-        navigationController?.navigationBar.topItem?.title = "Options"
-        navigationController?.pushViewController(vc, animated: true)
+        print("tap cell")
     }
 }
-

@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ColorScheduleTableViewCell: UITableViewCell {
+class ColorTableViewCell: UITableViewCell {
 
     let backgroundViewCell: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -31,7 +30,6 @@ class ColorScheduleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-   //["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
     func configure(indexPath: IndexPath) {
         switch indexPath.section {
         case 0: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.9294223189, green: 0.3272274435, blue: 0.4104554057, alpha: 1)
@@ -44,7 +42,6 @@ class ColorScheduleTableViewCell: UITableViewCell {
         }
     }
     
-        
     //MARK: - Set constraints for subviews on cell
     func setConstrains() {
         self.addSubview(backgroundViewCell)

@@ -94,7 +94,7 @@ class OptionsScheduleTableVC : UITableViewController {
         case [2, 0]: pushControllers(viewController: TeachersVC())
             
         //MARK: - Color's section
-        case [3, 0]: pushControllers(viewController: ScheduleColorVC())
+        case [3, 0]: pushControllers(viewController: ColorScheduleVC())
             
         default:
             print("Tap OptionsTableView")

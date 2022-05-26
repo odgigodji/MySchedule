@@ -1,5 +1,5 @@
 //
-//  ScheduleColorVC.swift
+//  ColorScheduleVC.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 24.05.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScheduleColorVC : UITableViewController {
+class ColorScheduleVC : UITableViewController {
     
     let idOptionsColorCell = "idOptionsColorCell"
     let idOptionsColorHeader = "idOptionsColorHeader"
@@ -17,8 +17,8 @@ class ScheduleColorVC : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: - style for Opotion Scheduole TableVC
-        title = "Color"
+        //MARK: - style for Color Schedule TableVC
+        title = "Color Schedule"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
 //        tableView.bounces = false
@@ -26,7 +26,7 @@ class ScheduleColorVC : UITableViewController {
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ColorScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
+        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsColorHeader)
     }
     
@@ -41,7 +41,7 @@ class ScheduleColorVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsColorCell, for: indexPath) as! ColorScheduleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsColorCell, for: indexPath) as! ColorTableViewCell
         cell.configure(indexPath: indexPath)
         return cell
     }
