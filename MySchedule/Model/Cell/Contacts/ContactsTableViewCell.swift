@@ -12,8 +12,13 @@ class ContactsTableViewCell: UITableViewCell {
     let contactImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "contact")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
