@@ -23,7 +23,7 @@ class ContactsTableVC : UITableViewController {
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
+        tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,8 +35,7 @@ class ContactsTableVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! OptionsTableViewCell
-//        cell.textLabel?.text = "cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
         return cell
     }
     
