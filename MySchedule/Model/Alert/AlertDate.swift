@@ -39,8 +39,8 @@ extension UIViewController {
         alert.addAction(ok)
         alert.addAction(cancel)
         
+        //MARK: - set constraints on alert and datePicker
         alert.view.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.widthAnchor.constraint(equalTo: alert.view.widthAnchor).isActive = true
         datePicker.heightAnchor.constraint(equalToConstant: 160).isActive = true

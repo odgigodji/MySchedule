@@ -14,6 +14,8 @@ class OptionsTasksTableVC : UITableViewController {
     
     let headerNamesArray = ["DATE", "LESSON", "TASK", "COLOR"]
     
+    let cellNameArray = ["Date", "Lesson", "Task", ""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +28,7 @@ class OptionsTasksTableVC : UITableViewController {
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(OpitonsTasksTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsTasksHeader)
     }
     
@@ -39,8 +41,8 @@ class OptionsTasksTableVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OpitonsTasksTableViewCell
-        cell.configure(indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionsTableViewCell
+        cell.tasksConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }
     
@@ -64,7 +66,7 @@ class OptionsTasksTableVC : UITableViewController {
     //MARK: - didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OpitonsTasksTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
         switch indexPath.section {
         case 0: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in

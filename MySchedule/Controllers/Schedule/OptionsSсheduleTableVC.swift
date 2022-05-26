@@ -14,6 +14,12 @@ class OptionsScheduleTableVC : UITableViewController {
     
     let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
     
+    let cellNameArray = [["Дата", "Время"],
+                         ["Имя", "Тип", "Корпус", "Аудитория"],
+                         ["Teacher's name"],
+                         [""],
+                         ["Повторять каждые 7 дней"]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +32,7 @@ class OptionsScheduleTableVC : UITableViewController {
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
     }
     
@@ -46,8 +52,8 @@ class OptionsScheduleTableVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsScheduleTableViewCell
-        cell.configure(indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsTableViewCell
+        cell.scheduleConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }
     
@@ -71,7 +77,7 @@ class OptionsScheduleTableVC : UITableViewController {
     //MARK: - didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
         switch indexPath {
         //MARK: - Date and Time section
