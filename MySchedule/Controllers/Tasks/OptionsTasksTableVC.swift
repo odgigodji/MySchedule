@@ -12,13 +12,13 @@ class OptionsTasksTableVC : UITableViewController {
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsTasksHeader = "idOptionsTasksHeader"
     
-    let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
+    let headerNamesArray = ["DATE", "LESSON", "TASK", "COLOR"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: - style for Opotion Scheduole TableVC
-        title = "Option Schedule"
+        //MARK: - style for Opotion Tasks TableVC
+        title = "Option Tasks"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
 //        tableView.bounces = false
@@ -35,14 +35,7 @@ class OptionsTasksTableVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return 2
-        case 1: return 4
-        case 2: return 1
-        case 3: return 1
-        default:
-            return 1
-        }
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,34 +64,14 @@ class OptionsTasksTableVC : UITableViewController {
     //MARK: - didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OpitonsTasksTableViewCell
         
-        switch indexPath {
-        //MARK: - Date and Time section
-        case [0, 0]:
-            alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
-        }
-        case [0, 1]:
-            alertsTime(label: cell.nameCellLabel) { (date) in
-            print(date)
-        }
-            
-        //MARK: - Lesson's section
-        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name of lesson")
-        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type of lesson")
-        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
-        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
-            
-        //MARK: - Teacher's section
-        case [2, 0]: pushControllers(viewController: TeachersVC())
-            
-        //MARK: - Color's section
-        case [3, 0]: pushControllers(viewController: ScheduleColorVC())
-            
-        default:
-            print("Tap OptionsTableView")
-        }
+//        switch indexPath.section {
+//        case 0:
+//            alertForCellName(label: , name: <#T##String#>, placeholder: <#T##String#>)
+//        default:
+//            <#code#>
+//        }
     }
     
     func pushControllers(viewController: UIViewController) {

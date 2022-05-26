@@ -25,11 +25,7 @@ class OpitonsTasksTableViewCell: UITableViewCell {
         return label
     }()
     
-    let cellNameArray = [["Дата", "Время"],
-                         ["Имя", "Тип", "Корпус", "Аудитория"],
-                         ["Teacher's name"],
-                         [""],
-                         ["Повторять каждые 7 дней"]]
+    let cellNameArray = ["Date", "Lesson", "Task", ""]
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -45,7 +41,7 @@ class OpitonsTasksTableViewCell: UITableViewCell {
     }
     
     func configure(indexPath: IndexPath) {
-        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+        nameCellLabel.text = cellNameArray[indexPath.section]
         
         if indexPath == [3, 0] {
             backgroundViewCell.backgroundColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
