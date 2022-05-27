@@ -9,22 +9,18 @@ import UIKit
 
 class ContactOptionTableVC : UITableViewController {
     
-    let idOptionsScheduleCell = "idOptionsCell"
-    let idOptionsScheduleHeader = "idOptionsScheduleHeader"
+    let idOptionsContactsCell = "idOptionsContactCell"
+    let idOptionsContactHeader = "idOptionsContactHeader"
     
-    let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
+    let headerNamesArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE"]
     
-    let cellNameArray = [["Дата", "Время"],
-                         ["Имя", "Тип", "Корпус", "Аудитория"],
-                         ["Teacher's name"],
-                         [""],
-                         ["Повторять каждые 7 дней"]]
+    let cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //MARK: - style for Opotion Scheduole TableVC
-        title = "Option Schedule"
+        title = "Option Contact"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
 //        tableView.bounces = false
@@ -32,8 +28,8 @@ class ContactOptionTableVC : UITableViewController {
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
+        tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsContactsCell)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsContactHeader)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,19 +37,12 @@ class ContactOptionTableVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return 2
-        case 1: return 4
-        case 2: return 1
-        case 3: return 1
-        default:
-            return 1
-        }
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsTableViewCell
-        cell.scheduleConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactsCell, for: indexPath) as! OptionsTableViewCell
+        cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }
     
@@ -64,7 +53,7 @@ class ContactOptionTableVC : UITableViewController {
     
     //MARK: - set header in table view
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsScheduleHeader) as! HeaderOptionsTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionsContactHeader) as! HeaderOptionsTableViewCell
         header.configure(nameArray: headerNamesArray, section: section)
         return header
     }
@@ -77,34 +66,8 @@ class ContactOptionTableVC : UITableViewController {
     //MARK: - didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
+//        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
-        switch indexPath {
-        //MARK: - Date and Time section
-        case [0, 0]:
-            alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
-        }
-        case [0, 1]:
-            alertsTime(label: cell.nameCellLabel) { (date) in
-            print(date)
-        }
-            
-        //MARK: - Lesson's section
-        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name of lesson")
-        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type of lesson")
-        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
-        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
-            
-        //MARK: - Teacher's section
-        case [2, 0]: pushControllers(viewController: TeachersVC())
-            
-        //MARK: - Color's section
-        case [3, 0]: pushControllers(viewController: ColorScheduleVC())
-            
-        default:
-            print("Tap OptionsTableView")
-        }
     }
     
     func pushControllers(viewController: UIViewController) {
