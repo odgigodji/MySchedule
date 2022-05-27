@@ -11,14 +11,20 @@ class ContactsTableVC : UITableViewController {
     
     let idContactsCell = "idContactsCell"
     
+    let searchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: - searchController settings
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
         
         //MARK: - style for Option Tasks TableVC
         title = "Contacts"
         tableView.backgroundColor = .white//.ultraLightGray()
         tableView.separatorStyle = .singleLine
-        tableView.bounces = false
+//        tableView.bounces = false
         
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
