@@ -72,6 +72,9 @@ class ContactOptionTableVC : UITableViewController {
         case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact")
         case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact")
         case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter phone contact")
+        case 3: alertFriendOrTeacher(label: cell.nameCellLabel, completionHandler: { (type) in
+            print(type)
+        })
         default:
             print("Tap ContactTableView")
         }
