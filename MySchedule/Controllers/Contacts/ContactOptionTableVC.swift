@@ -48,7 +48,7 @@ class ContactOptionTableVC : UITableViewController {
     
     //MARK: - set height of the cell
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        indexPath.section == 4 ? 200 : 44
     }
     
     //MARK: - set header in table view
