@@ -24,6 +24,13 @@ class ContactsTableVC : UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+    }
+    
+    @objc func addButtonTapped() {
+        let contactOption = ContactOptionTableVC()
+        navigationController?.pushViewController(contactOption, animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

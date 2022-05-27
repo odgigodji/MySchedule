@@ -53,6 +53,7 @@ class ContactsTableViewCell: UITableViewCell {
         
         //MARK: - customization  cells
         self.selectionStyle = .none
+        
     }
     
     required init?(coder: NSCoder) {
