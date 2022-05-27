@@ -66,7 +66,15 @@ class ContactOptionTableVC : UITableViewController {
     //MARK: - didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
+        
+        switch indexPath.section {
+        case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact")
+        case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact")
+        case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter phone contact")
+        default:
+            print("Tap ContactTableView")
+        }
         
     }
     
