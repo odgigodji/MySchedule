@@ -16,7 +16,7 @@ class ContactsTableVC : UITableViewController {
         
         //MARK: - style for Option Tasks TableVC
         title = "Contacts"
-        tableView.backgroundColor = .ultraLightGray()
+        tableView.backgroundColor = .white//.ultraLightGray()
         tableView.separatorStyle = .singleLine
         tableView.bounces = false
         

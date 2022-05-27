@@ -37,6 +37,8 @@ class MainTabBarController: UITabBarController {
         
         //MARK: - set item to navController
         navController.tabBarItem = item
+        navController.navigationBar.scrollEdgeAppearance = navController.navigationBar.standardAppearance
+        
         return navController
     }
     

@@ -64,6 +64,10 @@ class OptionsTableViewCell: UITableViewCell {
     
     func tasksConfigure(nameArray: [String], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section]
+        
+        if indexPath == [3, 0] {
+            backgroundViewCell.backgroundColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
+        }
     }
     
     func contactConfigure(nameArray: [String], indexPath: IndexPath) {

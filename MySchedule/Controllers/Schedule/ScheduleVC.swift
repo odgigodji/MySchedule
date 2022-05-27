@@ -56,6 +56,11 @@ class ScheduleVC: UIViewController {
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        
+        //MARK: - standart appearance for tabBar
+        if #available(iOS 15.0, *) {
+            navigationController?.tabBarController?.tabBar.scrollEdgeAppearance = navigationController?.tabBarController?.tabBar.standardAppearance
+        }
     }
     
     @objc func addButtonTapped() {
