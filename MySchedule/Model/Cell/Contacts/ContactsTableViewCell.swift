@@ -12,7 +12,7 @@ class ContactsTableViewCell: UITableViewCell {
     let contactImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "contact")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -21,7 +21,7 @@ class ContactsTableViewCell: UITableViewCell {
     let phoneImageView: UIImageView = {
         let imageView = UIImageView()
         
-        //MARK: - custom system image color
+        //MARK: - custom system image color(just for example)
         imageView.image = UIImage(systemName: "phone.fill")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .systemBlue
         
