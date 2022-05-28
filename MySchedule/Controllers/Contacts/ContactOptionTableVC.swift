@@ -112,7 +112,6 @@ extension ContactOptionTableVC: UIImagePickerControllerDelegate, UINavigationCon
         cell.backgroundViewCell.contentMode = .scaleAspectFill
         cell.backgroundViewCell.clipsToBounds = true
         dismiss(animated: true) {
-            
         }
     }
     
