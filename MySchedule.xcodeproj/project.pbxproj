@@ -34,6 +34,7 @@
 		FA681299283FD98400F78251 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681298283FD98400F78251 /* ContactsTableViewCell.swift */; };
 		FA68129B2841108300F78251 /* ContactOptionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129A2841108300F78251 /* ContactOptionTableVC.swift */; };
 		FA68129D284124D000F78251 /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129C284124D000F78251 /* AlertFriendOrTeacher.swift */; };
+		FA68129F2842816700F78251 /* PhotoCameraAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129E2842816700F78251 /* PhotoCameraAlert.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
 		FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E145282841DD00126A5B /* MainTabBarController.swift */; };
@@ -97,6 +98,7 @@
 		FA681298283FD98400F78251 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		FA68129A2841108300F78251 /* ContactOptionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableVC.swift; sourceTree = "<group>"; };
 		FA68129C284124D000F78251 /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
+		FA68129E2842816700F78251 /* PhotoCameraAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCameraAlert.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA85E143282841DD00126A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				FA681284283D2B8D00F78251 /* AlertTime.swift */,
 				FA681286283D342F00F78251 /* AlertForCellName.swift */,
 				FA68129C284124D000F78251 /* AlertFriendOrTeacher.swift */,
+				FA68129E2842816700F78251 /* PhotoCameraAlert.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				FA681297283FD67600F78251 /* ContactsTableVC.swift in Sources */,
 				FA68128F283E28FE00F78251 /* ColorTableViewCell.swift in Sources */,
 				FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */,
+				FA68129F2842816700F78251 /* PhotoCameraAlert.swift in Sources */,
 				FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */,
 				FA0135772837903F00D05714 /* PressButtonProtocols.swift in Sources */,
 			);
