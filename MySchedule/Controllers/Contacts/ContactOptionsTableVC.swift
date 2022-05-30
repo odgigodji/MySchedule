@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactOptionTableVC : UITableViewController {
+class ContactOptionsTableVC : UITableViewController {
     
     let idOptionsContactsCell = "idOptionsContactCell"
     let idOptionsContactHeader = "idOptionsContactHeader"
@@ -92,7 +92,7 @@ class ContactOptionTableVC : UITableViewController {
 }
 
 //MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
-extension ContactOptionTableVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ContactOptionsTableVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         
@@ -111,8 +111,7 @@ extension ContactOptionTableVC: UIImagePickerControllerDelegate, UINavigationCon
         cell.backgroundViewCell.image = info[.editedImage] as? UIImage
         cell.backgroundViewCell.contentMode = .scaleAspectFill
         cell.backgroundViewCell.clipsToBounds = true
-        dismiss(animated: true) {
-        }
+        dismiss(animated: true)
     }
     
 }

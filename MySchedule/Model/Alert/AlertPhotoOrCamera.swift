@@ -1,5 +1,5 @@
 //
-//  PhotoCameraAlert.swift
+//  AlertPhotoOrCamera.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 28.05.2022.
@@ -30,5 +30,4 @@ extension UIViewController {
         
         present(alertController, animated: true)
     }
-    
 }

@@ -1,5 +1,5 @@
 //
-//  ColorScheduleVC.swift
+//  ScheduleColorVC.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 24.05.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorScheduleVC : UITableViewController {
+class ScheduleColorVC : UITableViewController {
     
     let idOptionsColorCell = "idOptionsColorCell"
     let idOptionsColorHeader = "idOptionsColorHeader"

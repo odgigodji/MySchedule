@@ -16,7 +16,7 @@
 		FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0135732836DDF900D05714 /* TasksTableViewCell.swift */; };
 		FA0135772837903F00D05714 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0135762837903F00D05714 /* PressButtonProtocols.swift */; };
 		FA06D2D7283A84F700F683BB /* Goals in Resources */ = {isa = PBXBuildFile; fileRef = FA06D2D6283A84F700F683BB /* Goals */; };
-		FA06D2D9283A871100F683BB /* OptionsSсheduleTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2D8283A871100F683BB /* OptionsSсheduleTableVC.swift */; };
+		FA06D2D9283A871100F683BB /* SсheduleOptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2D8283A871100F683BB /* SсheduleOptionsTableVC.swift */; };
 		FA06D2E3283A921500F683BB /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E2283A921500F683BB /* OptionsTableViewCell.swift */; };
 		FA06D2E5283BC13800F683BB /* HeaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E4283BC13700F683BB /* HeaderOptionsTableViewCell.swift */; };
 		FA0E3EEC283BEA820094FE3F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E3EEB283BEA820094FE3F /* UIColor.swift */; };
@@ -24,17 +24,17 @@
 		FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681282283CEF6D00F78251 /* AlertDate.swift */; };
 		FA681285283D2B8D00F78251 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681284283D2B8D00F78251 /* AlertTime.swift */; };
 		FA681287283D342F00F78251 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681286283D342F00F78251 /* AlertForCellName.swift */; };
-		FA681289283D397700F78251 /* ColorScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681288283D397700F78251 /* ColorScheduleVC.swift */; };
+		FA681289283D397700F78251 /* ScheduleColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681288283D397700F78251 /* ScheduleColorVC.swift */; };
 		FA68128B283D398F00F78251 /* TeachersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68128A283D398F00F78251 /* TeachersVC.swift */; };
 		FA68128D283D4D9F00F78251 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68128C283D4D9F00F78251 /* UIAlertController.swift */; };
 		FA68128F283E28FE00F78251 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68128E283E28FE00F78251 /* ColorTableViewCell.swift */; };
-		FA681291283E985D00F78251 /* OptionsTasksTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681290283E985C00F78251 /* OptionsTasksTableVC.swift */; };
-		FA681295283F6BF900F78251 /* ColorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681294283F6BF900F78251 /* ColorTableVC.swift */; };
+		FA681291283E985D00F78251 /* TaskOptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681290283E985C00F78251 /* TaskOptionsTableVC.swift */; };
+		FA681295283F6BF900F78251 /* TaskColorsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681294283F6BF900F78251 /* TaskColorsTableVC.swift */; };
 		FA681297283FD67600F78251 /* ContactsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681296283FD67600F78251 /* ContactsTableVC.swift */; };
 		FA681299283FD98400F78251 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681298283FD98400F78251 /* ContactsTableViewCell.swift */; };
-		FA68129B2841108300F78251 /* ContactOptionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129A2841108300F78251 /* ContactOptionTableVC.swift */; };
+		FA68129B2841108300F78251 /* ContactOptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129A2841108300F78251 /* ContactOptionsTableVC.swift */; };
 		FA68129D284124D000F78251 /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129C284124D000F78251 /* AlertFriendOrTeacher.swift */; };
-		FA68129F2842816700F78251 /* PhotoCameraAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129E2842816700F78251 /* PhotoCameraAlert.swift */; };
+		FA68129F2842816700F78251 /* AlertPhotoOrCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68129E2842816700F78251 /* AlertPhotoOrCamera.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
 		FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E145282841DD00126A5B /* MainTabBarController.swift */; };
@@ -80,7 +80,7 @@
 		FA0135732836DDF900D05714 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		FA0135762837903F00D05714 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		FA06D2D6283A84F700F683BB /* Goals */ = {isa = PBXFileReference; lastKnownFileType = text; path = Goals; sourceTree = "<group>"; };
-		FA06D2D8283A871100F683BB /* OptionsSсheduleTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionsSсheduleTableVC.swift"; sourceTree = "<group>"; };
+		FA06D2D8283A871100F683BB /* SсheduleOptionsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SсheduleOptionsTableVC.swift"; sourceTree = "<group>"; };
 		FA06D2E2283A921500F683BB /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		FA06D2E4283BC13700F683BB /* HeaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		FA0E3EEB283BEA820094FE3F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -88,17 +88,17 @@
 		FA681282283CEF6D00F78251 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		FA681284283D2B8D00F78251 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
 		FA681286283D342F00F78251 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
-		FA681288283D397700F78251 /* ColorScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheduleVC.swift; sourceTree = "<group>"; };
+		FA681288283D397700F78251 /* ScheduleColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorVC.swift; sourceTree = "<group>"; };
 		FA68128A283D398F00F78251 /* TeachersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersVC.swift; sourceTree = "<group>"; };
 		FA68128C283D4D9F00F78251 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		FA68128E283E28FE00F78251 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
-		FA681290283E985C00F78251 /* OptionsTasksTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTasksTableVC.swift; sourceTree = "<group>"; };
-		FA681294283F6BF900F78251 /* ColorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableVC.swift; sourceTree = "<group>"; };
+		FA681290283E985C00F78251 /* TaskOptionsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableVC.swift; sourceTree = "<group>"; };
+		FA681294283F6BF900F78251 /* TaskColorsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColorsTableVC.swift; sourceTree = "<group>"; };
 		FA681296283FD67600F78251 /* ContactsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableVC.swift; sourceTree = "<group>"; };
 		FA681298283FD98400F78251 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
-		FA68129A2841108300F78251 /* ContactOptionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableVC.swift; sourceTree = "<group>"; };
+		FA68129A2841108300F78251 /* ContactOptionsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionsTableVC.swift; sourceTree = "<group>"; };
 		FA68129C284124D000F78251 /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
-		FA68129E2842816700F78251 /* PhotoCameraAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCameraAlert.swift; sourceTree = "<group>"; };
+		FA68129E2842816700F78251 /* AlertPhotoOrCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhotoOrCamera.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA85E143282841DD00126A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				FA85E176282850D100126A5B /* ScheduleVC.swift */,
-				FA06D2D8283A871100F683BB /* OptionsSсheduleTableVC.swift */,
-				FA681288283D397700F78251 /* ColorScheduleVC.swift */,
+				FA06D2D8283A871100F683BB /* SсheduleOptionsTableVC.swift */,
+				FA681288283D397700F78251 /* ScheduleColorVC.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -208,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				FA85E178282850E500126A5B /* TasksVC.swift */,
-				FA681290283E985C00F78251 /* OptionsTasksTableVC.swift */,
-				FA681294283F6BF900F78251 /* ColorTableVC.swift */,
+				FA681290283E985C00F78251 /* TaskOptionsTableVC.swift */,
+				FA681294283F6BF900F78251 /* TaskColorsTableVC.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -217,9 +217,9 @@
 		FA06D2DD283A875000F683BB /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				FA68128A283D398F00F78251 /* TeachersVC.swift */,
 				FA681296283FD67600F78251 /* ContactsTableVC.swift */,
-				FA68129A2841108300F78251 /* ContactOptionTableVC.swift */,
+				FA68129A2841108300F78251 /* ContactOptionsTableVC.swift */,
+				FA68128A283D398F00F78251 /* TeachersVC.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -268,7 +268,7 @@
 				FA681284283D2B8D00F78251 /* AlertTime.swift */,
 				FA681286283D342F00F78251 /* AlertForCellName.swift */,
 				FA68129C284124D000F78251 /* AlertFriendOrTeacher.swift */,
-				FA68129E2842816700F78251 /* PhotoCameraAlert.swift */,
+				FA68129E2842816700F78251 /* AlertPhotoOrCamera.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -607,30 +607,30 @@
 				FA06D2E3283A921500F683BB /* OptionsTableViewCell.swift in Sources */,
 				FA68128B283D398F00F78251 /* TeachersVC.swift in Sources */,
 				FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */,
-				FA681291283E985D00F78251 /* OptionsTasksTableVC.swift in Sources */,
+				FA681291283E985D00F78251 /* TaskOptionsTableVC.swift in Sources */,
 				FA681299283FD98400F78251 /* ContactsTableViewCell.swift in Sources */,
 				FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */,
 				FA68128D283D4D9F00F78251 /* UIAlertController.swift in Sources */,
 				FA681287283D342F00F78251 /* AlertForCellName.swift in Sources */,
-				FA06D2D9283A871100F683BB /* OptionsSсheduleTableVC.swift in Sources */,
+				FA06D2D9283A871100F683BB /* SсheduleOptionsTableVC.swift in Sources */,
 				FA85E177282850D200126A5B /* ScheduleVC.swift in Sources */,
 				FA68129D284124D000F78251 /* AlertFriendOrTeacher.swift in Sources */,
 				FA0E3EEC283BEA820094FE3F /* UIColor.swift in Sources */,
 				FA01356D2833AEBB00D05714 /* UIStackView.swift in Sources */,
 				FA01356F2833CCF700D05714 /* UILabel.swift in Sources */,
 				FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */,
-				FA68129B2841108300F78251 /* ContactOptionTableVC.swift in Sources */,
+				FA68129B2841108300F78251 /* ContactOptionsTableVC.swift in Sources */,
 				FA85E179282850E500126A5B /* TasksVC.swift in Sources */,
 				FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */,
 				FA681285283D2B8D00F78251 /* AlertTime.swift in Sources */,
-				FA681289283D397700F78251 /* ColorScheduleVC.swift in Sources */,
+				FA681289283D397700F78251 /* ScheduleColorVC.swift in Sources */,
 				FA06D2E5283BC13800F683BB /* HeaderOptionsTableViewCell.swift in Sources */,
 				FA0135722833E90A00D05714 /* UIFont.swift in Sources */,
-				FA681295283F6BF900F78251 /* ColorTableVC.swift in Sources */,
+				FA681295283F6BF900F78251 /* TaskColorsTableVC.swift in Sources */,
 				FA681297283FD67600F78251 /* ContactsTableVC.swift in Sources */,
 				FA68128F283E28FE00F78251 /* ColorTableViewCell.swift in Sources */,
 				FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */,
-				FA68129F2842816700F78251 /* PhotoCameraAlert.swift in Sources */,
+				FA68129F2842816700F78251 /* AlertPhotoOrCamera.swift in Sources */,
 				FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */,
 				FA0135772837903F00D05714 /* PressButtonProtocols.swift in Sources */,
 			);

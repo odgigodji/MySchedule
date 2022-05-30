@@ -1,5 +1,5 @@
 //
-//  OptionsScheduleVC.swift
+//  ScheduleOptionsTableVC.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 22.05.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OptionsScheduleTableVC : UITableViewController {
+class ScheduleOptionsTableVC : UITableViewController {
     
     let idOptionsScheduleCell = "idOptionsCell"
     let idOptionsScheduleHeader = "idOptionsScheduleHeader"
@@ -100,7 +100,7 @@ class OptionsScheduleTableVC : UITableViewController {
         case [2, 0]: pushControllers(viewController: TeachersVC())
             
         //MARK: - Color's section
-        case [3, 0]: pushControllers(viewController: ColorScheduleVC())
+        case [3, 0]: pushControllers(viewController: ScheduleColorVC())
             
         default:
             print("Tap OptionsTableView")
