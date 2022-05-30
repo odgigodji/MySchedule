@@ -34,6 +34,13 @@ class ScheduleOptionsTableVC : UITableViewController {
         tableView.dataSource = self
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsScheduleHeader)
+        
+        //MARK: - save button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+    }
+    
+    @objc private func saveButtonTapped() {
+        print("save")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
