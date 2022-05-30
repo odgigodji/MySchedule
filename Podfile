@@ -6,6 +6,7 @@ target 'MySchedule' do
   use_frameworks!
 
 pod 'FSCalendar'
+pod 'RealmSwift'
 
   # Pods for MySchedule
 
