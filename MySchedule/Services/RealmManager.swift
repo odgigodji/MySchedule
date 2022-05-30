@@ -7,3 +7,16 @@
 
 import RealmSwift
 
+class RealmManager {
+    static let shared = RealmManager()
+    
+    private init() {}
+    
+    let localRealm = try! Realm()
+    
+    func saveScheduleModule(model: ScheduleModel) {
+        try! localRealm.write {
+            localRealm.add(model)
+        }
+    }
+}
