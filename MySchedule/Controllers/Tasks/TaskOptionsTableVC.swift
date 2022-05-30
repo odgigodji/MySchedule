@@ -9,12 +9,12 @@ import UIKit
 
 class TaskOptionsTableVC : UITableViewController {
     
-    let idOptionsTaskCell = "idOptionsTaskCell"
-    let idOptionsTasksHeader = "idOptionsTasksHeader"
+    private let idOptionsTaskCell = "idOptionsTaskCell"
+    private let idOptionsTasksHeader = "idOptionsTasksHeader"
     
-    let headerNamesArray = ["DATE", "LESSON", "TASK", "COLOR"]
+    private let headerNamesArray = ["DATE", "LESSON", "TASK", "COLOR"]
     
-    let cellNameArray = ["Date", "Lesson", "Task", ""]
+    private let cellNameArray = ["Date", "Lesson", "Task", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,7 @@ class TaskOptionsTableVC : UITableViewController {
         }
     }
     
-    func pushControllers(viewController: UIViewController) {
+    private func pushControllers(viewController: UIViewController) {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)

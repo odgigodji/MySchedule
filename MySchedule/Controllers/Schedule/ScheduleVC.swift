@@ -27,14 +27,14 @@ class ScheduleVC: UIViewController {
         return button
     }()
     
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.bounces = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    let idScheduleCell = "idScheduleCell"
+    private let idScheduleCell = "idScheduleCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +63,12 @@ class ScheduleVC: UIViewController {
         }
     }
     
-    @objc func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let scheduleOption = ScheduleOptionsTableVC()
         navigationController?.pushViewController(scheduleOption, animated: true)
     }
     
-    @objc func showHideButtonTapped() {
+    @objc private func showHideButtonTapped() {
         if calendar.scope == .week {
             calendar.setScope(.month, animated: true)
             showHideButton.setTitle("Hide calendar", for: .normal)
@@ -79,7 +79,7 @@ class ScheduleVC: UIViewController {
     }
     
     //MARK: - swipe gesture recognizer
-    func swipeAction() {
+    private func swipeAction() {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeUp.direction = .up
         calendar.addGestureRecognizer(swipeUp)
@@ -90,7 +90,7 @@ class ScheduleVC: UIViewController {
 
     }
     
-    @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
+    @objc private func handleSwipe(gesture: UISwipeGestureRecognizer) {
         switch gesture.direction {
         case .up:
            showHideButtonTapped()

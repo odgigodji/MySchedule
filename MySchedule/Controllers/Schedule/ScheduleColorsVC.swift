@@ -1,5 +1,5 @@
 //
-//  ScheduleColorVC.swift
+//  ScheduleColorsVC.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 24.05.2022.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ScheduleColorVC : UITableViewController {
+class ScheduleColorsVC : UITableViewController {
     
-    let idOptionsColorCell = "idOptionsColorCell"
-    let idOptionsColorHeader = "idOptionsColorHeader"
+    private let idOptionsColorCell = "idOptionsColorCell"
+    private let idOptionsColorHeader = "idOptionsColorHeader"
     
     let headerNamesArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
     
@@ -18,7 +18,7 @@ class ScheduleColorVC : UITableViewController {
         super.viewDidLoad()
         
         //MARK: - style for Color Schedule TableVC
-        title = "Color Schedule"
+        title = "Colors Schedule"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
 //        tableView.bounces = false

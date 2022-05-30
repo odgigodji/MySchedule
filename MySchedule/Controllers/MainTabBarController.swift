@@ -14,7 +14,6 @@ class MainTabBarController: UITabBarController {
         
         view.backgroundColor = .white
         setupTabBar()
-        
     }
 
     private func setupTabBar() {

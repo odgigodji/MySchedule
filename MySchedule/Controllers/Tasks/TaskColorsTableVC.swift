@@ -9,10 +9,10 @@ import UIKit
 
 class TaskColorsTableVC : UITableViewController {
     
-    let idTasksColorCell = "idOptionsTasksCell"
-    let idOptionsTasksHeader = "idOptionsTasksHeader"
+    private let idTasksColorCell = "idOptionsTasksCell"
+    private let idOptionsTasksHeader = "idOptionsTasksHeader"
     
-    let headerNamesArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
+    private let headerNamesArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

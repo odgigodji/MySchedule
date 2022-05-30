@@ -9,8 +9,8 @@ import UIKit
 
 class ContactOptionsTableVC : UITableViewController {
     
-    let idOptionsContactsCell = "idOptionsContactCell"
-    let idOptionsContactHeader = "idOptionsContactHeader"
+    private let idOptionsContactsCell = "idOptionsContactCell"
+    private let idOptionsContactHeader = "idOptionsContactHeader"
     
     let headerNamesArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE"]
     
@@ -84,7 +84,7 @@ class ContactOptionsTableVC : UITableViewController {
         
     }
     
-    func pushControllers(viewController: UIViewController) {
+    private func pushControllers(viewController: UIViewController) {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)

@@ -9,8 +9,8 @@ import UIKit
 
 class ScheduleOptionsTableVC : UITableViewController {
     
-    let idOptionsScheduleCell = "idOptionsCell"
-    let idOptionsScheduleHeader = "idOptionsScheduleHeader"
+    private let idOptionsScheduleCell = "idOptionsCell"
+    private let idOptionsScheduleHeader = "idOptionsScheduleHeader"
     
     let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
     
@@ -24,7 +24,7 @@ class ScheduleOptionsTableVC : UITableViewController {
         super.viewDidLoad()
         
         //MARK: - style for Opotion Scheduole TableVC
-        title = "Option Schedule"
+        title = "Options Schedule"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
 //        tableView.bounces = false
@@ -100,14 +100,14 @@ class ScheduleOptionsTableVC : UITableViewController {
         case [2, 0]: pushControllers(viewController: TeachersVC())
             
         //MARK: - Color's section
-        case [3, 0]: pushControllers(viewController: ScheduleColorVC())
+        case [3, 0]: pushControllers(viewController: ScheduleColorsVC())
             
         default:
             print("Tap OptionsTableView")
         }
     }
     
-    func pushControllers(viewController: UIViewController) {
+    private func pushControllers(viewController: UIViewController) {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)

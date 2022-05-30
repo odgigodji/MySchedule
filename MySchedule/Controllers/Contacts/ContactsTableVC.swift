@@ -9,9 +9,9 @@ import UIKit
 
 class ContactsTableVC : UITableViewController {
     
-    let idContactsCell = "idContactsCell"
+    private let idContactsCell = "idContactsCell"
     
-    let searchController = UISearchController()
+    private let searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class ContactsTableVC : UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
-    @objc func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let contactOption = ContactOptionsTableVC()
         navigationController?.pushViewController(contactOption, animated: true)
     }
@@ -62,7 +62,7 @@ class ContactsTableVC : UITableViewController {
         print("lal")
     }
     
-    func pushControllers(viewController: UIViewController) {
+    private func pushControllers(viewController: UIViewController) {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)

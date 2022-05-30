@@ -27,14 +27,14 @@ class TasksVC: UIViewController {
         return button
     }()
     
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.bounces = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    let idTasksCell = "idTasksCell"
+    private let idTasksCell = "idTasksCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +61,12 @@ class TasksVC: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
-    @objc func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let tasksOptionVC = TaskOptionsTableVC()
         navigationController?.pushViewController(tasksOptionVC, animated: true)
     }
     
-    @objc func showHideButtonTapped() {
+    @objc private func showHideButtonTapped() {
         if calendar.scope == .week {
             calendar.setScope(.month, animated: true)
             showHideButton.setTitle("Hide calendar", for: .normal)
@@ -77,7 +77,7 @@ class TasksVC: UIViewController {
     }
     
     //MARK: - swipe gesture recognizer
-    func swipeAction() {
+    private func swipeAction() {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeUp.direction = .up
         calendar.addGestureRecognizer(swipeUp)
@@ -87,7 +87,7 @@ class TasksVC: UIViewController {
         calendar.addGestureRecognizer(swipeDown)
     }
     
-    @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
+    @objc private func handleSwipe(gesture: UISwipeGestureRecognizer) {
         switch gesture.direction {
         case .up:
            showHideButtonTapped()
