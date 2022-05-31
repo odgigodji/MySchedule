@@ -20,6 +20,9 @@ class ScheduleOptionsTableVC : UITableViewController {
                          [""],
                          ["Повторять каждые 7 дней"]]
     
+    //MARK: - scheduleModel
+    private let scheduleModel = ScheduleModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +42,22 @@ class ScheduleOptionsTableVC : UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
     }
     
+    //MARK: - saveButtonTapped - save model in DB
     @objc private func saveButtonTapped() {
         print("save")
+        
+//        scheduleModel.scheduleDate = Date()
+//        scheduleModel.scheduleTime = Date()
+//        scheduleModel.scheduleName = "ScheduleName"
+//        scheduleModel.scheduleType = "ScheduleType"
+//        scheduleModel.scheduleBuilding = "ScheduleBuilding"
+//        scheduleModel.scheduleAudience = "ScheduleAudience"
+//        scheduleModel.scheduleTeacher = "ScheduleTeacher"
+//        scheduleModel.scheduleColor = "ScheduleColor"
+//        scheduleModel.scheduleIsRepeat = true
+//        scheduleModel.scheduleWeekday = 100
+        
+        RealmManager.shared.saveScheduleModule(model: scheduleModel)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,12 +106,13 @@ class ScheduleOptionsTableVC : UITableViewController {
         switch indexPath {
         //MARK: - Date and Time section
         case [0, 0]:
-            alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
+            alertDate(label: cell.nameCellLabel) { [self] (numberWeekday, date) in
+//            print(numberWeekday, date)
+                scheduleModel.scheduleDate = date
         }
         case [0, 1]:
-            alertsTime(label: cell.nameCellLabel) { (date) in
-            print(date)
+            alertsTime(label: cell.nameCellLabel) { [self] (time) in
+                scheduleModel.scheduleTime = time
         }
             
         //MARK: - Lesson's section
