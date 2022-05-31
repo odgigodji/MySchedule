@@ -101,7 +101,6 @@ class ContactOptionsTableVC : UITableViewController {
 extension ContactOptionsTableVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
-        
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
