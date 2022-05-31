@@ -35,6 +35,8 @@ class OptionsTableViewCell: UITableViewCell {
         return repeatSwitch
     }()
     
+    weak var switchRepeatDelegate: SwitchRepeatProtocol?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstrains()
@@ -77,12 +79,9 @@ class OptionsTableViewCell: UITableViewCell {
         indexPath.section == 4 ? backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus") : nil
     }
     
+    //MARK: - switchChange
     @objc func switchChange(paramTarget: UISwitch) {
-        if paramTarget.isOn {
-            print("On")
-        } else {
-            print("OFf")
-        }
+        switchRepeatDelegate?.switchRepeat(value: paramTarget.isOn)
     }
     
     //MARK: - Set constraints for subviews on cell

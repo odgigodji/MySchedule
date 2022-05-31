@@ -78,6 +78,7 @@ class ScheduleOptionsTableVC : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsTableViewCell
         cell.scheduleConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        cell.switchRepeatDelegate = self
         return cell
     }
     
@@ -144,5 +145,12 @@ class ScheduleOptionsTableVC : UITableViewController {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+//MARK: - SwitchRepeatProtocol
+extension ScheduleOptionsTableVC: SwitchRepeatProtocol {
+    func switchRepeat(value: Bool) {
+        scheduleModel.scheduleIsRepeat = value
     }
 }
