@@ -106,20 +106,28 @@ class ScheduleOptionsTableVC : UITableViewController {
         switch indexPath {
         //MARK: - Date and Time section
         case [0, 0]:
-            alertDate(label: cell.nameCellLabel) { [self] (numberWeekday, date) in
-//            print(numberWeekday, date)
-                scheduleModel.scheduleDate = date
+            alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+                self.scheduleModel.scheduleDate = date
+                self.scheduleModel.scheduleWeekday = numberWeekday
         }
         case [0, 1]:
-            alertsTime(label: cell.nameCellLabel) { [self] (time) in
-                scheduleModel.scheduleTime = time
+            alertsTime(label: cell.nameCellLabel) { (time) in
+                self.scheduleModel.scheduleTime = time
         }
             
         //MARK: - Lesson's section
-        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name of lesson")
-        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type of lesson")
-        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
-        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
+        case [1, 0]: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name of lesson") { (text) in
+            self.scheduleModel.scheduleName = text
+        }
+        case [1, 1]: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type of lesson") { (text) in
+            self.scheduleModel.scheduleType = text
+        }
+        case [1, 2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building") { (text) in
+            self.scheduleModel.scheduleBuilding = text
+        }
+        case [1, 3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience") { (text) in
+            self.scheduleModel.scheduleAudience = text
+        }
             
         //MARK: - Teacher's section
         case [2, 0]: pushControllers(viewController: TeachersVC())

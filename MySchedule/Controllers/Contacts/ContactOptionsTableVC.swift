@@ -69,9 +69,15 @@ class ContactOptionsTableVC : UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
         switch indexPath.section {
-        case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact")
-        case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact")
-        case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter phone contact")
+        case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact") { (text) in
+            print(text)
+        }
+        case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact") { (text) in
+            print(text)
+        }
+        case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter phone contact") { (text) in
+            print(text)
+        }
         case 3: alertFriendOrTeacher(label: cell.nameCellLabel, completionHandler: { (type) in
             print(type)
         })
