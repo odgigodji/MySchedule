@@ -19,6 +19,7 @@
 		FA06D2D9283A871100F683BB /* SсheduleOptionsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2D8283A871100F683BB /* SсheduleOptionsTableVC.swift */; };
 		FA06D2E3283A921500F683BB /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E2283A921500F683BB /* OptionsTableViewCell.swift */; };
 		FA06D2E5283BC13800F683BB /* HeaderOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06D2E4283BC13700F683BB /* HeaderOptionsTableViewCell.swift */; };
+		FA0D3CBD28479CA10065EBB4 /* AlertOK.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D3CBC28479CA00065EBB4 /* AlertOK.swift */; };
 		FA0E3EEC283BEA820094FE3F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E3EEB283BEA820094FE3F /* UIColor.swift */; };
 		FA5FE86C2832AECB00D03C41 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */; };
 		FA681283283CEF6D00F78251 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA681282283CEF6D00F78251 /* AlertDate.swift */; };
@@ -85,6 +86,7 @@
 		FA06D2D8283A871100F683BB /* SсheduleOptionsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SсheduleOptionsTableVC.swift"; sourceTree = "<group>"; };
 		FA06D2E2283A921500F683BB /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		FA06D2E4283BC13700F683BB /* HeaderOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		FA0D3CBC28479CA00065EBB4 /* AlertOK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOK.swift; sourceTree = "<group>"; };
 		FA0E3EEB283BEA820094FE3F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FA5FE86B2832AECB00D03C41 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		FA681282283CEF6D00F78251 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				FA681286283D342F00F78251 /* AlertForCellName.swift */,
 				FA68129C284124D000F78251 /* AlertFriendOrTeacher.swift */,
 				FA68129E2842816700F78251 /* AlertPhotoOrCamera.swift */,
+				FA0D3CBC28479CA00065EBB4 /* AlertOK.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				FA681295283F6BF900F78251 /* TaskColorsTableVC.swift in Sources */,
 				FA681297283FD67600F78251 /* ContactsTableVC.swift in Sources */,
 				FA6812A7284518E500F78251 /* RealmManager.swift in Sources */,
+				FA0D3CBD28479CA10065EBB4 /* AlertOK.swift in Sources */,
 				FA68128F283E28FE00F78251 /* ColorTableViewCell.swift in Sources */,
 				FA0135742836DDF900D05714 /* TasksTableViewCell.swift in Sources */,
 				FA68129F2842816700F78251 /* AlertPhotoOrCamera.swift in Sources */,

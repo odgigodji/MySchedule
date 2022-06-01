@@ -23,6 +23,8 @@ class ScheduleOptionsTableVC : UITableViewController {
     //MARK: - scheduleModel
     private var scheduleModel = ScheduleModel()
     
+    var hexColorCell = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,8 +46,11 @@ class ScheduleOptionsTableVC : UITableViewController {
     
     //MARK: - saveButtonTapped - save model in DB
     @objc private func saveButtonTapped() {
+        scheduleModel.scheduleColor = hexColorCell
         RealmManager.shared.saveScheduleModule(model: scheduleModel)
         scheduleModel = ScheduleModel()
+        
+        alertOK(title: "Success")
         tableView.reloadRows(at: [[0, 0], [0, 1], [1, 0], [1, 1], [1, 2], [1, 3]], with: .none)
     }
     
