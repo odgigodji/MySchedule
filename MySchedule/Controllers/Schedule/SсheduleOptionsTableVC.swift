@@ -21,7 +21,7 @@ class ScheduleOptionsTableVC : UITableViewController {
                          ["Повторять каждые 7 дней"]]
     
     //MARK: - scheduleModel
-    private let scheduleModel = ScheduleModel()
+    private var scheduleModel = ScheduleModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,20 +44,9 @@ class ScheduleOptionsTableVC : UITableViewController {
     
     //MARK: - saveButtonTapped - save model in DB
     @objc private func saveButtonTapped() {
-        print("save")
-        
-//        scheduleModel.scheduleDate = Date()
-//        scheduleModel.scheduleTime = Date()
-//        scheduleModel.scheduleName = "ScheduleName"
-//        scheduleModel.scheduleType = "ScheduleType"
-//        scheduleModel.scheduleBuilding = "ScheduleBuilding"
-//        scheduleModel.scheduleAudience = "ScheduleAudience"
-//        scheduleModel.scheduleTeacher = "ScheduleTeacher"
-//        scheduleModel.scheduleColor = "ScheduleColor"
-//        scheduleModel.scheduleIsRepeat = true
-//        scheduleModel.scheduleWeekday = 100
-        
         RealmManager.shared.saveScheduleModule(model: scheduleModel)
+        scheduleModel = ScheduleModel()
+        tableView.reloadRows(at: [[0, 0], [0, 1], [1, 0], [1, 1], [1, 2], [1, 3]], with: .none)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -135,7 +124,6 @@ class ScheduleOptionsTableVC : UITableViewController {
             
         //MARK: - Color's section
         case [3, 0]: pushControllers(viewController: ScheduleColorsVC())
-            
         default:
             print("Tap OptionsTableView")
         }
