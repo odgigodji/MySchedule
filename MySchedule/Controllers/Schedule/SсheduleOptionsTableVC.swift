@@ -23,7 +23,7 @@ class ScheduleOptionsTableVC : UITableViewController {
     //MARK: - scheduleModel
     private var scheduleModel = ScheduleModel()
     
-    var hexColorCell = String()
+    var hexColorCell = "1A4766"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,9 @@ class ScheduleOptionsTableVC : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsTableViewCell
-        cell.scheduleConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        let color = UIColor().colorFromHex(hexColorCell)
+        cell.scheduleConfigure(nameArray: cellNameArray, indexPath: indexPath, hexColor: hexColorCell)
+        cell.backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
         cell.switchRepeatDelegate = self
         return cell
     }

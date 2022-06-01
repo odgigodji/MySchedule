@@ -30,7 +30,7 @@ class OptionsTableViewCell: UITableViewCell {
         let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
         repeatSwitch.isHidden = true
-        repeatSwitch.onTintColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
+//        repeatSwitch.onTintColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()
@@ -52,24 +52,17 @@ class OptionsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func scheduleConfigure(nameArray: [[String]], indexPath: IndexPath) {
+    func scheduleConfigure(nameArray: [[String]], indexPath: IndexPath, hexColor: String) {
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
+        let color = UIColor().colorFromHex(hexColor)
         
-        if indexPath == [3, 0] {
-            backgroundViewCell.backgroundColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
-        }
-        
-        if indexPath == [4, 0] {
-            repeatSwitch.isHidden = false
-        }
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
+        repeatSwitch.isHidden = (indexPath.section == 4 ? false : true)
+        repeatSwitch.onTintColor = color
     }
     
     func tasksConfigure(nameArray: [String], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section]
-        
-        if indexPath == [3, 0] {
-            backgroundViewCell.backgroundColor = .init(red: 0.3, green: 0.2 , blue: 0.8, alpha: 1.0)
-        }
     }
     
     func contactConfigure(nameArray: [String], indexPath: IndexPath) {

@@ -82,6 +82,7 @@ class ScheduleColorsVC : UITableViewController {
         //MARK: - view controller[1] is ScheduleOptions
         let scheduleOptions = self.navigationController?.viewControllers[1] as? ScheduleOptionsTableVC
         scheduleOptions?.hexColorCell = hexColor
+        scheduleOptions?.tableView.reloadRows(at: [[3, 0] , [4, 0]], with: .none)
         self.navigationController?.popViewController(animated: true)
     }
 }
