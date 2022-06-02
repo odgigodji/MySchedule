@@ -49,7 +49,7 @@ class ScheduleVC: UIViewController {
         
         //MARK: - data base actions
         scheduleModel = localRealm.objects(ScheduleModel.self)
-        print(scheduleModel)
+//        print(scheduleModel)
         
         
         calendar.delegate = self
@@ -137,7 +137,10 @@ extension ScheduleVC: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else { return }
+        print(weekday)
     }
 }
 
