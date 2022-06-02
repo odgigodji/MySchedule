@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class ScheduleVC: UIViewController {
     
@@ -34,6 +35,10 @@ class ScheduleVC: UIViewController {
         return tableView
     }()
     
+    let localRealm = try! Realm()
+    
+    var scheduleModel: Results<ScheduleModel>!
+    
     private let idScheduleCell = "idScheduleCell"
     
     override func viewDidLoad() {
@@ -41,6 +46,11 @@ class ScheduleVC: UIViewController {
         
         view.backgroundColor = .white
         title = "Schedule"
+        
+        //MARK: - data base actions
+        scheduleModel = localRealm.objects(ScheduleModel.self)
+        print(scheduleModel)
+        
         
         calendar.delegate = self
         calendar.dataSource = self

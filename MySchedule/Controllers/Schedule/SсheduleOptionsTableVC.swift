@@ -51,7 +51,8 @@ class ScheduleOptionsTableVC : UITableViewController {
         scheduleModel = ScheduleModel()
         
         alertOK(title: "Success")
-        tableView.reloadRows(at: [[0, 0], [0, 1], [1, 0], [1, 1], [1, 2], [1, 3]], with: .none)
+        hexColorCell = "1A4766"
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
