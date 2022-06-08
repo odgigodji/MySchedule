@@ -1,2 +1,5 @@
 # MySchedule
-schedule for school or university
+# schedule for school or university
+
+приложение с использованием Realm, три View Controller’a c возможностью просмотра, добавления предметов в расписание,
+выбором цветов, указанием типа, имени преподавателя, аватарки и тд. Использованы TableView, Alert’ы, верстка в коде.
