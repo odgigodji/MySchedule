@@ -140,8 +140,17 @@ extension ScheduleVC: FSCalendarDataSource, FSCalendarDelegate {
         guard let weekday = components.weekday else { return }
         print(weekday)
         
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second: -1)
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
         let predicateRepeat = NSPredicate(format: "scheduleWeekday = \(weekday) AND scheduleIsRepeat = true")
-        scheduleArray = localRealm.objects(ScheduleModel.self).filter(predicateRepeat)
+        let predicateUnrepeat = NSPredicate(format: "scheduleIsRepeat = false AND scheduleDate BETWEEN %@", [dateStart, dateEnd])
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
+        
+        scheduleArray = localRealm.objects(ScheduleModel.self).filter(compound)
         print(scheduleArray)
     }
 }
