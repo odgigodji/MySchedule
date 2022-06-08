@@ -1,6 +1,6 @@
-<!-- # MySchedule
-## schedule for school or university
- -->
+# MySchedule (in work..)
+<!-- ## schedule for school or university -->
+
 
 ### Приложение с использованием Realm, три View Controller’a c возможностью просмотра, добавления предметов в расписание, выбором цветов, указанием типа, имени преподавателя, аватарки и тд. Использованы TableView, Alert’ы, верстка в коде.
 
@@ -19,5 +19,16 @@
 #### ContactsVC(список контактов, связанных с учебой):
 - TableView с преподавателями и студентами
 - Каждая ячейка состоит из аватарки, номера телефона, имени, почты
+- SearchBar для поиска контактов
 
 ### ``Второстепенные VC's:`` 
+#### ScheduleOptions:
+-
+#### TaskOptions:
+-
+#### ContactOptions:
+-
+#### TeachersOptions:
+-
+#### ColorsOptions(for schedule and tasks)
+-
