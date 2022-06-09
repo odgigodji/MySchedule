@@ -47,9 +47,6 @@ class ScheduleVC: UIViewController {
         view.backgroundColor = .white
         title = "Schedule"
         
-//        print(scheduleModel)
-        
-        
         calendar.delegate = self
         calendar.dataSource = self
         calendar.scope = .week
@@ -60,6 +57,7 @@ class ScheduleVC: UIViewController {
         
         setConstraints()
         swipeAction()
+        scheduleOnDay(date: Date())
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         
@@ -108,16 +106,38 @@ class ScheduleVC: UIViewController {
             break
         }
     }
+    
+    private func scheduleOnDay(date: Date) {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else { return }
+        print(weekday)
+        
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second: -1)
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
+        let predicateRepeat = NSPredicate(format: "scheduleWeekday = \(weekday) AND scheduleIsRepeat = true")
+        let predicateUnrepeat = NSPredicate(format: "scheduleIsRepeat = false AND scheduleDate BETWEEN %@", [dateStart, dateEnd])
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
+        
+        scheduleArray = localRealm.objects(ScheduleModel.self).filter(compound).sorted(byKeyPath: "scheduleTime")
+        tableView.reloadData()
+    }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension ScheduleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 5
+        return scheduleArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
+        let model = scheduleArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     
@@ -135,23 +155,7 @@ extension ScheduleVC: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.weekday], from: date)
-        guard let weekday = components.weekday else { return }
-        print(weekday)
-        
-        let dateStart = date
-        let dateEnd: Date = {
-            let components = DateComponents(day: 1, second: -1)
-            return Calendar.current.date(byAdding: components, to: dateStart)!
-        }()
-        
-        let predicateRepeat = NSPredicate(format: "scheduleWeekday = \(weekday) AND scheduleIsRepeat = true")
-        let predicateUnrepeat = NSPredicate(format: "scheduleIsRepeat = false AND scheduleDate BETWEEN %@", [dateStart, dateEnd])
-        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
-        
-        scheduleArray = localRealm.objects(ScheduleModel.self).filter(compound)
-        print(scheduleArray)
+        scheduleOnDay(date: date)
     }
 }
 

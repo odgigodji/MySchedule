@@ -10,15 +10,15 @@ import UIKit
 class ScheduleTableViewCell: UITableViewCell {
     
     //MARK: - labels on Cell init
-    let lessonName = UILabel(text: "Программирование", font: .avenirNextDemiBold20())
+    let lessonName = UILabel(text: "", font: .avenirNextDemiBold20())
     let teacherName = UILabel(text: "Антонов Антон Александровия", font: .avenirNext20(), alignment: .right)
-    let lessonTime = UILabel(text: "08:00", font: .avenirNextDemiBold20())
-    let typeLabel = UILabel(text: "Тип:", font: .avenirNext14(), alignment: .right)
-    let lessonType = UILabel(text: "Лекция", font: .avenirNextDemiBold14())
-    let buildingLabel = UILabel(text: "Корпус:", font: .avenirNext14(), alignment: .right)
-    let lessonBuilding = UILabel(text: "1", font: .avenirNextDemiBold14())
+    let lessonTime = UILabel(text: "", font: .avenirNextDemiBold20())
+    let typeLabel = UILabel(text: "Type:", font: .avenirNext14(), alignment: .right)
+    let lessonType = UILabel(text: "", font: .avenirNextDemiBold14())
+    let buildingLabel = UILabel(text: "Building:", font: .avenirNext14(), alignment: .right)
+    let lessonBuilding = UILabel(text: "", font: .avenirNextDemiBold14())
     let audLabel = UILabel(text: "Аудитория:", font: .avenirNext14(), alignment: .right)
-    let lessonAud = UILabel(text: "101", font: .avenirNextDemiBold14())
+    let lessonAud = UILabel(text: "", font: .avenirNextDemiBold14())
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,6 +31,19 @@ class ScheduleTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(model: ScheduleModel) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        lessonName.text = model.scheduleName
+        teacherName.text = model.scheduleTeacher
+        lessonTime.text = dateFormatter.string(from: model.scheduleTime)
+        lessonType.text = model.scheduleType
+        lessonBuilding.text = model.scheduleBuilding
+        lessonAud.text = model.scheduleAudience
+        backgroundColor = UIColor().colorFromHex("\(model.scheduleColor)")
     }
     
     //MARK: - Set constraints for subviews on cell
