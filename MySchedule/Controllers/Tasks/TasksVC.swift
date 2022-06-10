@@ -7,13 +7,13 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class TasksVC: UIViewController {
     private var calendarHideConstraint : NSLayoutConstraint!
     
     private var calendar : FSCalendar = {
         let calendar = FSCalendar()
-        
         calendar.translatesAutoresizingMaskIntoConstraints = false
         return calendar
     }()
@@ -35,6 +35,9 @@ class TasksVC: UIViewController {
     }()
     
     private let idTasksCell = "idTasksCell"
+    
+    private let localRealm = try! Realm()
+    private var taskArray: Results<TaskModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
