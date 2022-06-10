@@ -156,7 +156,6 @@ extension TasksVC: PressReadyTaskButtonProtocol {
     func readyButtonTapped(indexPath: IndexPath) {
         let task = taskArray[indexPath.row]
         RealmManager.shared.updateReadyButton(task: task, bool: !task.taskIsReady)
-        print(task.taskIsReady)
         tableView.reloadData()
     }
 }
