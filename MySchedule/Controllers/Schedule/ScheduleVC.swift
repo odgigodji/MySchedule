@@ -111,7 +111,6 @@ class ScheduleVC: UIViewController {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: date)
         guard let weekday = components.weekday else { return }
-        print(weekday)
         
         let dateStart = date
         let dateEnd: Date = {
