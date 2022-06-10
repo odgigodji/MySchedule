@@ -14,6 +14,7 @@ class RealmManager {
     
     let localRealm = try! Realm()
     
+    //MARK: - ScheduleModule
     func saveScheduleModule(model: ScheduleModel) {
         try! localRealm.write {
             localRealm.add(model)
@@ -23,6 +24,25 @@ class RealmManager {
     func deleteScheduleModule(model: ScheduleModel) {
         try! localRealm.write {
             localRealm.delete(model)
+        }
+    }
+    
+    //MARK: - TaskModule
+    func saveTaskModule(model: TaskModel) {
+        try! localRealm.write {
+            localRealm.add(model)
+        }
+    }
+    
+    func deleteTaskModule(model: TaskModel) {
+        try! localRealm.write {
+            localRealm.delete(model)
+        }
+    }
+    
+    func updateReadyButton(task: TaskModel, bool: Bool) {
+        try! localRealm.write {
+            task.taskIsReady = bool
         }
     }
 }

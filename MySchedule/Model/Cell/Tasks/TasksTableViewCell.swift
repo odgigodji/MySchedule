@@ -46,6 +46,15 @@ class TasksTableViewCell: UITableViewCell {
         cellTaskDelegate?.readyButtonTapped(indexPath: index)
     }
     
+    func configure(model: TaskModel) {
+        taskName.text = model.taskName
+        taskDescription.text = model.taskDescription
+        backgroundColor = UIColor().colorFromHex("\(model.taskColor)")
+        
+        let systemNameImage = model.taskIsReady ? "chevron.down.circle.fill" : "chevron.down.circle"
+        readyButton.setBackgroundImage(UIImage(systemName: systemNameImage), for: .normal)
+    }
+    
     //MARK: - Set constraints for subviews on cell
     func setConstrains() {
         self.contentView.addSubview(readyButton)

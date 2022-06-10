@@ -61,8 +61,11 @@ class OptionsTableViewCell: UITableViewCell {
 //        repeatSwitch.onTintColor = color
     }
     
-    func tasksConfigure(nameArray: [String], indexPath: IndexPath) {
+    func tasksConfigure(nameArray: [String], indexPath: IndexPath, hexColor: String) {
         nameCellLabel.text = nameArray[indexPath.section]
+        
+        let color = UIColor().colorFromHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3) ? color : .white
     }
     
     func contactConfigure(nameArray: [String], indexPath: IndexPath) {

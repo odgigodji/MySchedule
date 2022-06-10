@@ -39,6 +39,11 @@ class TasksVC: UIViewController {
     private let localRealm = try! Realm()
     private var taskArray: Results<TaskModel>!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +63,7 @@ class TasksVC: UIViewController {
         
         setConstraints()
         swipeAction()
+        setTaskOnDay(date: calendar.today!)
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         
@@ -77,6 +83,18 @@ class TasksVC: UIViewController {
             calendar.setScope(.week, animated: true)
             showHideButton.setTitle("Show calendar", for: .normal)
         }
+    }
+
+    //MARK: - update taskArray from DB
+    private func setTaskOnDay(date: Date) {
+        let dateStart = date
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1, second: -1)
+            return Calendar.current.date(byAdding: components, to: dateStart)!
+        }()
+        
+        taskArray = localRealm.objects(TaskModel.self).filter("taskDate BETWEEN %@", [dateStart, dateEnd])
+        tableView.reloadData()
     }
     
     //MARK: - swipe gesture recognizer
@@ -102,29 +120,42 @@ class TasksVC: UIViewController {
     }
 }
 
-//MARK: - FSCalendarDataSource, FSCalendarDelegate
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension TasksVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 5
+        return taskArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) as! TasksTableViewCell
         cell.cellTaskDelegate = self
         cell.index = indexPath
+        let model = taskArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let editingRow = taskArray[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _,_,completionHandler in
+            RealmManager.shared.deleteTaskModule(model: editingRow)
+            tableView.reloadData()
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
 
 //MARK: - PressReadyTaskButtonProtocol
 extension TasksVC: PressReadyTaskButtonProtocol {
     func readyButtonTapped(indexPath: IndexPath) {
-//        readyButton.tintColor = readyButton.tintColor == .black ? .green : .black
-        print("TAP")
+        let task = taskArray[indexPath.row]
+        RealmManager.shared.updateReadyButton(task: task, bool: !task.taskIsReady)
     }
 }
 
@@ -137,7 +168,7 @@ extension TasksVC: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        setTaskOnDay(date: date)
     }
 }
 
