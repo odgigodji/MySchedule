@@ -40,7 +40,7 @@ class TasksTableViewCell: UITableViewCell {
     }
     
     @objc func readyButtonTapped() {
-        readyButton.tintColor = readyButton.tintColor == .black ? .green : .black
+//        readyButton.tintColor = readyButton.tintColor == .black ? .green : .black
         
         guard let index = index else { return }
         cellTaskDelegate?.readyButtonTapped(indexPath: index)
