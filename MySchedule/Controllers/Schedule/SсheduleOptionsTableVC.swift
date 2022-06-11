@@ -51,7 +51,7 @@ class ScheduleOptionsTableVC : UITableViewController {
             alertOK(title: "Error", message: "Required fields: DATE, TIME, NAME")
         } else {
             scheduleModel.scheduleColor = hexColorCell
-            RealmManager.shared.saveScheduleModule(model: scheduleModel)
+            RealmManager.shared.saveScheduleModel(model: scheduleModel)
             scheduleModel = ScheduleModel()
             
             alertOK(title: "Success", message: nil)

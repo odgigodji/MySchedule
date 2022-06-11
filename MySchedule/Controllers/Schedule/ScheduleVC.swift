@@ -167,7 +167,7 @@ extension ScheduleVC: FSCalendarDataSource, FSCalendarDelegate {
         let editingRow = scheduleArray[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _,_,completionHandler in
-            RealmManager.shared.deleteScheduleModule(model: editingRow)
+            RealmManager.shared.deleteScheduleModel(model: editingRow)
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])

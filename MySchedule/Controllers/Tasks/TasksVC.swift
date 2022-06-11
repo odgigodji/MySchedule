@@ -144,7 +144,7 @@ extension TasksVC: UITableViewDelegate, UITableViewDataSource {
         let editingRow = taskArray[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _,_,completionHandler in
-            RealmManager.shared.deleteTaskModule(model: editingRow)
+            RealmManager.shared.deleteTaskModel(model: editingRow)
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])

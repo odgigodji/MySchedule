@@ -42,7 +42,7 @@ class TaskOptionsTableVC : UITableViewController {
             alertOK(title: "Error", message: "Required fields: DATE, LESSON")
         } else {
             taskModel.taskColor = hexColorCell
-            RealmManager.shared.saveTaskModule(model: taskModel)
+            RealmManager.shared.saveTaskModel(model: taskModel)
             taskModel = TaskModel()
             alertOK(title: "Success", message: nil)
             hexColorCell = "1A4766"

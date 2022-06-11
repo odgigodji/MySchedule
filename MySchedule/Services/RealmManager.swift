@@ -14,27 +14,27 @@ class RealmManager {
     
     let localRealm = try! Realm()
     
-    //MARK: - ScheduleModule
-    func saveScheduleModule(model: ScheduleModel) {
+    //MARK: - ScheduleModel
+    func saveScheduleModel(model: ScheduleModel) {
         try! localRealm.write {
             localRealm.add(model)
         }
     }
     
-    func deleteScheduleModule(model: ScheduleModel) {
+    func deleteScheduleModel(model: ScheduleModel) {
         try! localRealm.write {
             localRealm.delete(model)
         }
     }
     
-    //MARK: - TaskModule
-    func saveTaskModule(model: TaskModel) {
+    //MARK: - TaskModel
+    func saveTaskModel(model: TaskModel) {
         try! localRealm.write {
             localRealm.add(model)
         }
     }
     
-    func deleteTaskModule(model: TaskModel) {
+    func deleteTaskModel(model: TaskModel) {
         try! localRealm.write {
             localRealm.delete(model)
         }
@@ -43,6 +43,19 @@ class RealmManager {
     func updateReadyButton(task: TaskModel, bool: Bool) {
         try! localRealm.write {
             task.taskIsReady = bool
+        }
+    }
+    
+    //MARK: - ContactModel
+    func saveContactModel(model: ContactModel) {
+        try! localRealm.write {
+            localRealm.add(model)
+        }
+    }
+    
+    func deleteContactModel(model: ContactModel) {
+        try! localRealm.write {
+            localRealm.delete(model)
         }
     }
 }
