@@ -39,14 +39,12 @@
 		FA6812A42845140B00F78251 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6812A32845140B00F78251 /* ScheduleModel.swift */; };
 		FA6812A7284518E500F78251 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6812A6284518E500F78251 /* RealmManager.swift */; };
 		FA818BFA2853910B0058CE6D /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA818BF92853910B0058CE6D /* TaskModel.swift */; };
+		FA818BFC285463570058CE6D /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA818BFB285463570058CE6D /* ContactModel.swift */; };
 		FA85E142282841DD00126A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E141282841DD00126A5B /* AppDelegate.swift */; };
 		FA85E144282841DD00126A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E143282841DD00126A5B /* SceneDelegate.swift */; };
 		FA85E146282841DD00126A5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E145282841DD00126A5B /* MainTabBarController.swift */; };
 		FA85E14B282841DE00126A5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA85E14A282841DE00126A5B /* Assets.xcassets */; };
 		FA85E14E282841DE00126A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA85E14C282841DE00126A5B /* LaunchScreen.storyboard */; };
-		FA85E159282841DE00126A5B /* MyScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E158282841DE00126A5B /* MyScheduleTests.swift */; };
-		FA85E163282841DE00126A5B /* MyScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E162282841DE00126A5B /* MyScheduleUITests.swift */; };
-		FA85E165282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E164282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift */; };
 		FA85E177282850D200126A5B /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E176282850D100126A5B /* ScheduleVC.swift */; };
 		FA85E179282850E500126A5B /* TasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85E178282850E500126A5B /* TasksVC.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +105,7 @@
 		FA6812A32845140B00F78251 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		FA6812A6284518E500F78251 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		FA818BF92853910B0058CE6D /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		FA818BFB285463570058CE6D /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		FA85E13E282841DD00126A5B /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85E141282841DD00126A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA85E143282841DD00126A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,10 +114,7 @@
 		FA85E14D282841DE00126A5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA85E14F282841DE00126A5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA85E154282841DE00126A5B /* MyScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyScheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA85E158282841DE00126A5B /* MyScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleTests.swift; sourceTree = "<group>"; };
 		FA85E15E282841DE00126A5B /* MyScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyScheduleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA85E162282841DE00126A5B /* MyScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleUITests.swift; sourceTree = "<group>"; };
-		FA85E164282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA85E176282850D100126A5B /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		FA85E178282850E500126A5B /* TasksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +283,7 @@
 			children = (
 				FA6812A32845140B00F78251 /* ScheduleModel.swift */,
 				FA818BF92853910B0058CE6D /* TaskModel.swift */,
+				FA818BFB285463570058CE6D /* ContactModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -303,8 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				FA85E140282841DD00126A5B /* MySchedule */,
-				FA85E157282841DE00126A5B /* MyScheduleTests */,
-				FA85E161282841DE00126A5B /* MyScheduleUITests */,
 				FA85E13F282841DD00126A5B /* Products */,
 				8D06EB61E16EB07C6F5BD9FE /* Pods */,
 				791C20A9E543618D08DFDBCE /* Frameworks */,
@@ -333,23 +328,6 @@
 				FA85E17128284D0E00126A5B /* Resources */,
 			);
 			path = MySchedule;
-			sourceTree = "<group>";
-		};
-		FA85E157282841DE00126A5B /* MyScheduleTests */ = {
-			isa = PBXGroup;
-			children = (
-				FA85E158282841DE00126A5B /* MyScheduleTests.swift */,
-			);
-			path = MyScheduleTests;
-			sourceTree = "<group>";
-		};
-		FA85E161282841DE00126A5B /* MyScheduleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FA85E162282841DE00126A5B /* MyScheduleUITests.swift */,
-				FA85E164282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift */,
-			);
-			path = MyScheduleUITests;
 			sourceTree = "<group>";
 		};
 		FA85E17128284D0E00126A5B /* Resources */ = {
@@ -654,6 +632,7 @@
 				FA681285283D2B8D00F78251 /* AlertTime.swift in Sources */,
 				FA681289283D397700F78251 /* ScheduleColorsVC.swift in Sources */,
 				FA06D2E5283BC13800F683BB /* HeaderOptionsTableViewCell.swift in Sources */,
+				FA818BFC285463570058CE6D /* ContactModel.swift in Sources */,
 				FA0135722833E90A00D05714 /* UIFont.swift in Sources */,
 				FA6812A42845140B00F78251 /* ScheduleModel.swift in Sources */,
 				FA681295283F6BF900F78251 /* TaskColorsTableVC.swift in Sources */,
@@ -672,7 +651,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA85E159282841DE00126A5B /* MyScheduleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,8 +658,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA85E163282841DE00126A5B /* MyScheduleUITests.swift in Sources */,
-				FA85E165282841DE00126A5B /* MyScheduleUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
