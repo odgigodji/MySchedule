@@ -16,14 +16,20 @@ class ContactsVC : UIViewController {
     private let localRealm = try! Realm()
     private var contactArray: Results<ContactModel>!
     
-    let tableView: UITableView = {
+    private let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Friends", "Teachers"])
+        
+        segmentedControl.selectedSegmentIndex = 0
+        return segmentedControl
+    }()
+    
+    private let tableView: UITableView = {
         let tableView = UITableView()
         
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .white//.ultraLightGray()
         tableView.separatorStyle = .singleLine
 //        tableView.bounces = false
 
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -34,6 +40,8 @@ class ContactsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        view.backgroundColor = .white
         
         //MARK: - searchController settings
         searchController.searchBar.placeholder = "Search"
@@ -51,8 +59,15 @@ class ContactsVC : UIViewController {
         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
         
         setConstraints()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        
+    }
+    
+    @objc private func segmentChanged() {
+        print(segmentedControl.selectedSegmentIndex)
+//        print("segmentChanged")
     }
     
     @objc private func addButtonTapped() {
@@ -107,10 +122,11 @@ extension ContactsVC {
     
     private func setConstraints() {
         
-        let stackView = UIStackView(arrangedSubviews: [tableView], axis: .vertical, spacing: 0, distribution: .fillProportionally)
+        let stackView = UIStackView(arrangedSubviews: [segmentedControl, tableView], axis: .vertical, spacing: 0, distribution: .equalSpacing)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
