@@ -1,4 +1,4 @@
-//  ContactsTableVC.swift
+//  ContactsVC.swift
 //  MySchedule
 //
 //  Created by Nikita Evdokimov on 26.05.2022.
@@ -7,7 +7,7 @@
 import UIKit
 import RealmSwift
 
-class ContactsTableVC : UITableViewController {
+class ContactsVC : UIViewController {
     
     private let searchController = UISearchController()
     
@@ -16,9 +16,19 @@ class ContactsTableVC : UITableViewController {
     private let localRealm = try! Realm()
     private var contactArray: Results<ContactModel>!
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .singleLine
+//        tableView.bounces = false
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        print(contactArray)
         tableView.reloadData()
     }
     
@@ -34,16 +44,15 @@ class ContactsTableVC : UITableViewController {
         
         //MARK: - style for Option Tasks TableVC
         title = "Contacts"
-        tableView.backgroundColor = .white//.ultraLightGray()
-        tableView.separatorStyle = .singleLine
-//        tableView.bounces = false
         
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
         
+        setConstraints()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        
     }
     
     @objc private func addButtonTapped() {
@@ -56,14 +65,15 @@ class ContactsTableVC : UITableViewController {
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    //MARK: - UITableViewDelegate, UITableViewDataSource
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+}
+
+//MARK: - UITableViewDelegate, UITableViewDataSource
+extension ContactsVC : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactArray.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
         let model = contactArray[indexPath.row]
         cell.configure(model: model)
@@ -71,17 +81,17 @@ class ContactsTableVC : UITableViewController {
     }
     
     //MARK: - set height of the cell
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
    
     //MARK: - didSelectRowAt
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("lal")
     }
     
     //MARK: - trailingSwipeActionConfiguration
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editingRow = contactArray[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
@@ -92,4 +102,18 @@ class ContactsTableVC : UITableViewController {
     }
 }
 
-
+//MARK: - set constraints
+extension ContactsVC {
+    
+    private func setConstraints() {
+        
+        let stackView = UIStackView(arrangedSubviews: [tableView], axis: .vertical, spacing: 0, distribution: .fillProportionally)
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+}
