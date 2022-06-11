@@ -1,4 +1,3 @@
-//
 //  ContactsTableVC.swift
 //  MySchedule
 //
@@ -18,7 +17,8 @@ class ContactsTableVC : UITableViewController {
     private var contactArray: Results<ContactModel>!
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(true)
+//        print(contactArray)
         tableView.reloadData()
     }
     
@@ -58,12 +58,9 @@ class ContactsTableVC : UITableViewController {
     }
     
     //MARK: - UITableViewDelegate, UITableViewDataSource
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return contactArray.count
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return contactArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,6 +80,7 @@ class ContactsTableVC : UITableViewController {
         print("lal")
     }
     
+    //MARK: - trailingSwipeActionConfiguration
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editingRow = contactArray[indexPath.row]
         

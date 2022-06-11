@@ -70,7 +70,6 @@ class ContactOptionsTableVC : UITableViewController {
         } else {
             contactModel.contactImage = nil
         }
-        print(imageIsChanged)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -83,6 +82,7 @@ class ContactOptionsTableVC : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactsCell, for: indexPath) as! OptionsTableViewCell
+        
         cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }
@@ -151,8 +151,6 @@ extension ContactOptionsTableVC: UIImagePickerControllerDelegate, UINavigationCo
         cell.backgroundViewCell.contentMode = .scaleAspectFill
         cell.backgroundViewCell.clipsToBounds = true
         imageIsChanged = true
-        
-        print(imageIsChanged)
         
         dismiss(animated: true)
     }

@@ -41,7 +41,6 @@ class ContactsTableViewCell: UITableViewCell {
     
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        
         contactImageView.layer.cornerRadius = contactImageView.frame.height / 2
     }
     
@@ -59,12 +58,12 @@ class ContactsTableViewCell: UITableViewCell {
     }
     
     func configure(model: ContactModel) {
-        nameLabel.text = model.contactName
-        phoneLabel.text = model.contactPhone
-        mailLabel.text = model.contactMail
+        self.nameLabel.text = model.contactName
+        self.phoneLabel.text = model.contactPhone
+        self.mailLabel.text = model.contactMail
         
         guard let data = model.contactImage, let image = UIImage(data: data) else { return }
-        contactImageView.image = image
+        self.contactImageView.image = image
     }
     
     //MARK: - Set constraints for subviews on cell
