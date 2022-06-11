@@ -11,7 +11,7 @@ class ContactsTableViewCell: UITableViewCell {
     
     let contactImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "contact")
+        imageView.image = UIImage(systemName: "person.fill")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,6 @@ class ContactsTableViewCell: UITableViewCell {
         //MARK: - custom system image color(just for example)
         imageView.image = UIImage(systemName: "phone.fill")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .systemBlue
-        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -36,9 +35,9 @@ class ContactsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    let nameLabel = UILabel(text: "Dude", font: .avenirNext20())
-    let phoneLabel = UILabel(text: "+79205104201", font: .avenirNext14())
-    let mailLabel = UILabel(text: "Dude@gmail.com", font: .avenirNext14())
+    let nameLabel = UILabel(text: "Unknown", font: .avenirNext20())
+    let phoneLabel = UILabel(text: "Unknown", font: .avenirNext14())
+    let mailLabel = UILabel(text: "Unknown", font: .avenirNext14())
     
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
@@ -53,7 +52,6 @@ class ContactsTableViewCell: UITableViewCell {
         
         //MARK: - customization  cells
         self.selectionStyle = .none
-        
     }
     
     required init?(coder: NSCoder) {
