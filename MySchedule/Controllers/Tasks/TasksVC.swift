@@ -14,6 +14,7 @@ class TasksVC: UIViewController {
     
     private var calendar : FSCalendar = {
         let calendar = FSCalendar()
+        calendar.firstWeekday = 2
         calendar.translatesAutoresizingMaskIntoConstraints = false
         return calendar
     }()

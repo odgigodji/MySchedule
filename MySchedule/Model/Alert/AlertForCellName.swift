@@ -22,6 +22,7 @@ extension UIViewController {
         }
         
         alert.addTextField { (textFieldAlert) in
+            textFieldAlert.keyboardType = self.switchKeyboardTypeIfUniqueField(name: name)
             textFieldAlert.placeholder = placeholder
         }
         
@@ -31,5 +32,16 @@ extension UIViewController {
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
         
+    }
+    
+    private func switchKeyboardTypeIfUniqueField(name: String) -> UIKeyboardType {
+        switch name {
+        case "Phone Contact":
+            return .phonePad
+        case "Mail Contact":
+            return .asciiCapable
+        default:
+            return .default
+        }
     }
 }
