@@ -23,6 +23,7 @@ class ContactsTableViewCell: UITableViewCell {
         
         //MARK: - custom system image color(just for example)
         imageView.image = UIImage(systemName: "phone.fill")?.withRenderingMode(.alwaysTemplate)
+        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .systemBlue
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -31,6 +32,7 @@ class ContactsTableViewCell: UITableViewCell {
     let mailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "envelope.fill")
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
