@@ -48,7 +48,7 @@ class ContactsVC : UIViewController {
         navigationItem.searchController = searchController
         
         //MARK: - set contactArray from DB
-        contactArray = localRealm.objects(ContactModel.self)
+        contactArray = localRealm.objects(ContactModel.self).filter("contactType = 'Friend'")
         
         //MARK: - style for Option Tasks TableVC
         title = "Contacts"
@@ -66,7 +66,13 @@ class ContactsVC : UIViewController {
     }
     
     @objc private func segmentChanged() {
-        print(segmentedControl.selectedSegmentIndex)
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            contactArray = localRealm.objects(ContactModel.self).filter("contactType = 'Friend'")
+        } else {
+            contactArray = localRealm.objects(ContactModel.self).filter("contactType = 'Teacher'")
+        }
+        tableView.reloadData()
 //        print("segmentChanged")
     }
     

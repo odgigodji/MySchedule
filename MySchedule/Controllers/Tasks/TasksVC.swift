@@ -185,7 +185,7 @@ extension TasksVC {
         calendar.addConstraint(calendarHideConstraint)
         
         NSLayoutConstraint.activate([
-            calendar.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
+            calendar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             calendar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             calendar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
