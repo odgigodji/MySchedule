@@ -59,6 +59,7 @@ class ContactsVC : UIViewController {
         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
         
         setConstraints()
+        swipeRightAction()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
@@ -85,6 +86,17 @@ class ContactsVC : UIViewController {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK: - swipeRightAction
+    private func swipeRightAction() {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleRightSwipe))
+        swipeRight.direction = .right
+        tableView.addGestureRecognizer(swipeRight)
+    }
+    
+    @objc private func handleRightSwipe() {
+        print("right swipe")
     }
 }
 
@@ -120,6 +132,12 @@ extension ContactsVC : UITableViewDelegate, UITableViewDataSource {
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+extension ContactsVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("1")
     }
 }
 

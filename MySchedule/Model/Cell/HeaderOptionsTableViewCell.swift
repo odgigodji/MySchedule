@@ -11,9 +11,6 @@ class HeaderOptionsTableViewCell: UITableViewHeaderFooterView {
    
     let headerLabel = UILabel(font: .avenirNext14())
     
-    //MARK: - Names of headers
-//    let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
-
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
