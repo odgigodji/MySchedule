@@ -15,7 +15,7 @@ extension UIColor {
     }
 
     static func pastelBlue() -> UIColor {
-        return UIColor().colorFromHex("C4F6F2")
+        return UIColor().colorFromHex("C4ECF6")
     }
 }
 

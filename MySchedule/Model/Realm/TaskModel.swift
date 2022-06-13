@@ -11,6 +11,6 @@ class TaskModel: Object {
     @Persisted var taskDate: Date?
     @Persisted var taskName: String = "Unknown"
     @Persisted var taskDescription: String = "Unknown"
-    @Persisted var taskColor: String = "C4F6F2" //pastelBlue
+    @Persisted var taskColor: String = "C4ECF6" //pastelBlue
     @Persisted var taskIsReady: Bool = false
 }
