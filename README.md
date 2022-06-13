@@ -12,7 +12,8 @@
 
 ### ``Главные VC's:``
 ### ScheduleVC(выводит список всех предметов):
-![screenShot](https://i.ibb.co/wRsQLxc/ezgif-com-gif-maker.gif)- В верхней части календарь с возможностью выбора дня недели
+![screenShot](https://i.ibb.co/wRsQLxc/ezgif-com-gif-maker.gif)
+- В верхней части календарь с возможностью выбора дня недели
 - Реализована возможность скрывать календарь с помощью свайпа и на кнопку ``hide calendar``
 - в нижней части Table View с предметами на выбранный день
 - в правом верхнем углу кнопка ``+`` которая переносит нас на экран добавления предмета(``SсheduleOptionsTableVC``)
@@ -33,12 +34,12 @@
 
 ### ``Второстепенные VC's:`` 
 #### ScheduleOptions:
--
+- 
 #### TaskOptions:
--
+- 
 #### ContactOptions:
--
+- 
 #### TeachersOptions:
--
+- 
 #### ColorsOptions(for schedule and tasks)
--
+- 
