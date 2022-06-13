@@ -13,6 +13,7 @@ class ScheduleColorsVC : UITableViewController {
     private let idOptionsColorHeader = "idOptionsColorHeader"
     
     let headerNamesArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
+    let rowHexColors = ["F6CDC4", "F6D6C4", "F6E9C4", "DFF6C4", "C4F6F2", "C4ECF6", "D0C4F6" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class ScheduleColorsVC : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsColorCell, for: indexPath) as! ColorTableViewCell
-        cell.configure(indexPath: indexPath)
+        cell.configure(indexPath: indexPath, rowHexColors: rowHexColors)
         return cell
     }
     
@@ -66,13 +67,13 @@ class ScheduleColorsVC : UITableViewController {
     //MARK: - didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
-        case 0: setColor(hexColor: "BE2813")
-        case 1: setColor(hexColor: "F07F5A")
-        case 2: setColor(hexColor: "F3AF22")
-        case 3: setColor(hexColor: "467C24")
-        case 4: setColor(hexColor: "2D7FC1")
-        case 5: setColor(hexColor: "1A4766")
-        case 6: setColor(hexColor: "2D038F")
+        case 0: setColor(hexColor: rowHexColors[0])
+        case 1: setColor(hexColor: rowHexColors[1])
+        case 2: setColor(hexColor: rowHexColors[2])
+        case 3: setColor(hexColor: rowHexColors[3])
+        case 4: setColor(hexColor: rowHexColors[4])
+        case 5: setColor(hexColor: rowHexColors[5])
+        case 6: setColor(hexColor: rowHexColors[6])
         default:
             setColor(hexColor: "FFFFFF")
         }
@@ -82,7 +83,7 @@ class ScheduleColorsVC : UITableViewController {
         //MARK: - view controller[1] is ScheduleOptions
         let scheduleOptions = self.navigationController?.viewControllers[1] as? ScheduleOptionsTableVC
         scheduleOptions?.hexColorCell = hexColor
-        scheduleOptions?.tableView.reloadRows(at: [[3, 0] ], with: .none)
+        scheduleOptions?.tableView.reloadRows(at: [[3, 0]], with: .none)
         self.navigationController?.popViewController(animated: true)
     }
 }

@@ -29,16 +29,24 @@ class ColorTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    //F6CDC4 - red
+    //F6D6C4 - orange
+    //F6E9C4 - yellow
+    //DFF6C4 - green
+    //C4F6F2 - blue
+    //C4ECF6 - dark blue
+    //D0C4F6 - violet
     
-    func configure(indexPath: IndexPath) {
+    func configure(indexPath: IndexPath, rowHexColors: [String]) {
         switch indexPath.section {
-        case 0: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.9294223189, green: 0.3272274435, blue: 0.4104554057, alpha: 1)
-        case 1: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
-        case 2: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-        case 3: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
-        case 4: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        case 5: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        default: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+            case 0: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[0])
+            case 1: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[1])
+            case 2: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[2])
+            case 3: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[3])
+            case 4: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[4])
+            case 5: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[5])
+            default: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[6])
         }
     }
     
