@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ContactOptionsTableVC : UITableViewController {
     
@@ -36,8 +37,6 @@ class ContactOptionsTableVC : UITableViewController {
         
         //MARK: - create saveButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
-        
-        print(contactModel)
     }
     
     @objc private func saveButtonTapped() {
@@ -87,15 +86,13 @@ class ContactOptionsTableVC : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactsCell, for: indexPath) as! OptionsTableViewCell
         
         //MARK: - isEditingModel
-        if isEditingModel {
-            cellNameArray = [
-                contactModel.contactName, contactModel.contactPhone, contactModel.contactMail,  contactModel.contactType, ""
-            ]
-            cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        if !isEditingModel {
+            cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath, image: nil)
+        } else if let data = contactModel.contactImage, let image = UIImage(data: data) {
+            cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath, image: image)
         } else {
-            cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath)
+            cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath, image: nil)
         }
-        
         
         return cell
     }

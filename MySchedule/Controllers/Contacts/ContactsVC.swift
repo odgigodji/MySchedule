@@ -98,6 +98,15 @@ class ContactsVC : UIViewController {
         let contactOption = ContactOptionsTableVC()
         contactOption.contactModel = contactModel
         contactOption.isEditingModel = true
+        
+        contactOption.cellNameArray = [
+            contactModel.contactName,
+            contactModel.contactPhone,
+            contactModel.contactMail,
+            contactModel.contactType,
+            ""
+        ]
+        
         navigationController?.pushViewController(contactOption, animated: true)
     }
     
