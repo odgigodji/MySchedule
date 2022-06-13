@@ -6,7 +6,7 @@
 
 ❗️Для подключения подов в корневой папке ввести команду ``pod install`` или ``arch -x86_64 pod install`` (для процессора m1)
 
-![ScreenShot](https://i.ibb.co/wRsQLxc/ezgif-com-gif-maker.gif)
+![ScreenShot](https://i.ibb.co/HYgs5zC/ezgif-com-gif-maker-1.gif)
 
 ### ``Главные VC's:``
 #### ScheduleVC(выводит список всех предметов):
