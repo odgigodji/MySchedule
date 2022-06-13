@@ -40,6 +40,10 @@ extension UIViewController {
             return .phonePad
         case "Mail Contact":
             return .asciiCapable
+        case "Building number":
+            return .numberPad
+        case "Audience number":
+            return .numberPad
         default:
             return .default
         }

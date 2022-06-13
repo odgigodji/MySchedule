@@ -12,18 +12,18 @@ class ScheduleOptionsTableVC : UITableViewController {
     private let idOptionsScheduleCell = "idOptionsCell"
     private let idOptionsScheduleHeader = "idOptionsScheduleHeader"
     
-    let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
+    let headerNamesArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
     
-    var cellNameArray = [["Дата", "Время"],
-                         ["Имя", "Тип", "Корпус", "Аудитория"],
+    var cellNameArray = [["Date", "Time"],
+                         ["Name", "Type", "Building", "Audience"],
                          ["Teacher's name"],
                          [""],
-                         ["Повторять каждые 7 дней"]]
+                         ["Repeat every 7 day's"]]
     
     //MARK: - scheduleModel
     var scheduleModel = ScheduleModel()
     
-    var hexColorCell = "C4ECF6"
+    var hexColorCell = "C4ECF6" //pastelBlue
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -37,7 +37,7 @@ class ScheduleOptionsTableVC : UITableViewController {
         title = "Options Schedule"
         tableView.backgroundColor = .ultraLightGray()
         tableView.separatorStyle = .none
-//        tableView.bounces = false
+        tableView.bounces = true
         
         //MARK: - delegate, dataSource and register for Cell and headers
         tableView.delegate = self
