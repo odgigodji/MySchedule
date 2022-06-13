@@ -13,6 +13,10 @@ extension UIColor {
     static func ultraLightGray() -> UIColor? {
         return .init(white: 0.9, alpha: 1.0)
     }
+
+    static func pastelBlue() -> UIColor {
+        return UIColor().colorFromHex("C4F6F2")
+    }
 }
 
 //MARK: - color from hex

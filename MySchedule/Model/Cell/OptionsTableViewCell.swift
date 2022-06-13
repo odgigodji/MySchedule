@@ -30,7 +30,7 @@ class OptionsTableViewCell: UITableViewCell {
         let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
         repeatSwitch.isHidden = true
-        repeatSwitch.onTintColor = UIColor().colorFromHex("1A4766")
+        repeatSwitch.onTintColor = .pastelBlue()
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()

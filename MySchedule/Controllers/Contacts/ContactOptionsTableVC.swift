@@ -136,19 +136,15 @@ class ContactOptionsTableVC : UITableViewController {
         
         switch indexPath.section {
         case 0: alertForCellName(label: cell.nameCellLabel, name: "Name Contact", placeholder: "Enter name contact") { (text) in
-//            self.contactModel.contactName = text
             self.cellNameArray[0] = text
         }
         case 1: alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact") { (text) in
-//            self.contactModel.contactPhone = text
             self.cellNameArray[1] = text
         }
         case 2: alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter phone contact") { (text) in
-//            self.contactModel.contactMail = text
             self.cellNameArray[2] = text
         }
         case 3: alertFriendOrTeacher(label: cell.nameCellLabel, completionHandler: { (type) in
-//            self.contactModel.contactType = type
             self.cellNameArray[3] = type
         })
         case 4: alertPhotoOrCamera  { [self] source in

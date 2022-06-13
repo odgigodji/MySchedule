@@ -15,7 +15,7 @@ class TaskOptionsTableVC : UITableViewController {
     private let headerNamesArray = ["DATE", "LESSON", "TASK", "COLOR"]
     private let cellNameArray = ["Date", "Lesson", "Task", ""]
     
-    var hexColorCell = "1A4766"
+    var hexColorCell = "C4F6F2"
     
     private var taskModel = TaskModel()
     
@@ -45,7 +45,7 @@ class TaskOptionsTableVC : UITableViewController {
             RealmManager.shared.saveTaskModel(model: taskModel)
             taskModel = TaskModel()
             alertOK(title: "Success", message: nil)
-            hexColorCell = "1A4766"
+            hexColorCell = "C4F6F2"
             tableView.reloadData()
         }
     }

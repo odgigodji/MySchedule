@@ -87,5 +87,3 @@ class ScheduleColorsVC : UITableViewController {
         self.navigationController?.popViewController(animated: true)
     }
 }
-
-//popViewController - for comeback to previous VC

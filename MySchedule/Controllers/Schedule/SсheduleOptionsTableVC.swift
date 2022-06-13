@@ -23,7 +23,7 @@ class ScheduleOptionsTableVC : UITableViewController {
     //MARK: - scheduleModel
     var scheduleModel = ScheduleModel()
     
-    var hexColorCell = "1A4766"
+    var hexColorCell = "C4F6F2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class ScheduleOptionsTableVC : UITableViewController {
             scheduleModel = ScheduleModel()
             
             alertOK(title: "Success", message: nil)
-            hexColorCell = "1A4766"
+            hexColorCell = "C4F6F2"
             cellNameArray[2][0] = "Teacher's name"
             tableView.reloadData()
         }

@@ -30,14 +30,6 @@ class ColorTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    //F6CDC4 - red
-    //F6D6C4 - orange
-    //F6E9C4 - yellow
-    //DFF6C4 - green
-    //C4F6F2 - blue
-    //C4ECF6 - dark blue
-    //D0C4F6 - violet
-    
     func configure(indexPath: IndexPath, rowHexColors: [String]) {
         switch indexPath.section {
             case 0: backgroundViewCell.backgroundColor = UIColor().colorFromHex(rowHexColors[0])
