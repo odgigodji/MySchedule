@@ -8,6 +8,8 @@
 
 ![screenShot](https://i.ibb.co/wRsQLxc/ezgif-com-gif-maker.gif)
 
+![scr](https://i.ibb.co/HYgs5zC/ezgif-com-gif-maker-1.gif)
+
 ### ``Главные VC's:``
 #### ScheduleVC(выводит список всех предметов):
 - В верхней части календарь с возможностью выбора дня недели
