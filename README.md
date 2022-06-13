@@ -6,12 +6,13 @@
 
 ❗️Для подключения подов в корневой папке ввести команду ``pod install`` или ``arch -x86_64 pod install`` (для процессора m1)
 
-![screenShot](https://i.ibb.co/wRsQLxc/ezgif-com-gif-maker.gif)
 
-![scr](https://i.ibb.co/HYgs5zC/ezgif-com-gif-maker-1.gif)
+
+<!-- ![scr](https://i.ibb.co/HYgs5zC/ezgif-com-gif-maker-1.gif) -->
 
 ### ``Главные VC's:``
 #### ScheduleVC(выводит список всех предметов):
+![screenShot](https://i.ibb.co/wRsQLxc/ezgif-com-gif-maker.gif)
 - В верхней части календарь с возможностью выбора дня недели
 - Реализована возможность скрывать календарь с помощью свайпа и на кнопку ``hide calendar``
 - в нижней части Table View с предметами на выбранный день
