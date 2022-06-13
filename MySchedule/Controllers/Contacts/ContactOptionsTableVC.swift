@@ -50,7 +50,7 @@ class ContactOptionsTableVC : UITableViewController {
             contactModel = ContactModel()
             
             cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
-            alertOK(title: "Успешно", message: nil)
+            alertOK(title: "Success", message: nil)
             tableView.reloadData()
         } else {
             setImageModel()

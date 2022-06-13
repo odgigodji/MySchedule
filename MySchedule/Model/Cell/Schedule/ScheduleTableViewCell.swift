@@ -11,13 +11,13 @@ class ScheduleTableViewCell: UITableViewCell {
     
     //MARK: - labels on Cell init
     let lessonName = UILabel(text: "", font: .avenirNextDemiBold20())
-    let teacherName = UILabel(text: "Антонов Антон Александровия", font: .avenirNext20(), alignment: .right)
+    let teacherName = UILabel(text: "", font: .avenirNext20(), alignment: .right)
     let lessonTime = UILabel(text: "", font: .avenirNextDemiBold20())
     let typeLabel = UILabel(text: "Type:", font: .avenirNext14(), alignment: .right)
     let lessonType = UILabel(text: "", font: .avenirNextDemiBold14())
     let buildingLabel = UILabel(text: "Building:", font: .avenirNext14(), alignment: .right)
     let lessonBuilding = UILabel(text: "", font: .avenirNextDemiBold14())
-    let audLabel = UILabel(text: "Аудитория:", font: .avenirNext14(), alignment: .right)
+    let audLabel = UILabel(text: "Audience:", font: .avenirNext14(), alignment: .right)
     let lessonAud = UILabel(text: "", font: .avenirNextDemiBold14())
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
