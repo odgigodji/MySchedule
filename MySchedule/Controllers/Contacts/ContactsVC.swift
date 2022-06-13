@@ -107,6 +107,8 @@ class ContactsVC : UIViewController {
             ""
         ]
         
+        contactOption.imageIsChanged = true
+        
         navigationController?.pushViewController(contactOption, animated: true)
     }
     
