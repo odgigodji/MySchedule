@@ -11,11 +11,6 @@ class ContactsVC : UIViewController {
     
     private let searchController = UISearchController()
     
-    private let idContactsCell = "idContactsCell"
-    
-    private let localRealm = try! Realm()
-    private var contactArray: Results<ContactModel>!
-    
     private let segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Friends", "Teachers"])
         
@@ -33,6 +28,21 @@ class ContactsVC : UIViewController {
         return tableView
     }()
     
+    private let idContactsCell = "idContactsCell"
+    
+    private let localRealm = try! Realm()
+    private var contactsArray: Results<ContactModel>!
+    private var filteredArray: Results<ContactModel>!
+    
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return true}
+        return text.isEmpty
+    }
+    
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tableView.reloadData()
@@ -41,14 +51,16 @@ class ContactsVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = .white
+        view.backgroundColor = .white
         
         //MARK: - searchController settings
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         
         //MARK: - set contactArray from DB
-        contactArray = localRealm.objects(ContactModel.self).filter("contactType = 'Friend'")
+        contactsArray = localRealm.objects(ContactModel.self).filter("contactType = 'Friend'")
         
         //MARK: - style for Option Tasks TableVC
         title = "Contacts"
@@ -69,12 +81,11 @@ class ContactsVC : UIViewController {
     @objc private func segmentChanged() {
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            contactArray = localRealm.objects(ContactModel.self).filter("contactType = 'Friend'")
+            contactsArray = localRealm.objects(ContactModel.self).filter("contactType = 'Friend'")
         } else {
-            contactArray = localRealm.objects(ContactModel.self).filter("contactType = 'Teacher'")
+            contactsArray = localRealm.objects(ContactModel.self).filter("contactType = 'Teacher'")
         }
         tableView.reloadData()
-//        print("segmentChanged")
     }
     
     @objc private func addButtonTapped() {
@@ -88,7 +99,7 @@ class ContactsVC : UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    //MARK: - swipeRightAction
+    //MARK: - swipeRightAction(in work..)
     private func swipeRightAction() {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleRightSwipe))
         swipeRight.direction = .right
@@ -103,12 +114,12 @@ class ContactsVC : UIViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension ContactsVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactArray.count
+        return isFiltering ? filteredArray.count : contactsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
-        let model = contactArray[indexPath.row]
+        let model = isFiltering ? filteredArray[indexPath.row] : contactsArray[indexPath.row]
         cell.configure(model: model)
         return cell
     }
@@ -125,7 +136,7 @@ extension ContactsVC : UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - trailingSwipeActionConfiguration
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editingRow = contactArray[indexPath.row]
+        let editingRow = contactsArray[indexPath.row]
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
             RealmManager.shared.deleteContactModel(model: editingRow)
@@ -137,7 +148,13 @@ extension ContactsVC : UITableViewDelegate, UITableViewDataSource {
 
 extension ContactsVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("1")
+        
+        filterContactForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContactForSearchText(_ searchText: String) {
+        filteredArray = contactsArray.filter("contactName CONTAINS[c] %@", searchText)
+        tableView.reloadData()
     }
 }
 
