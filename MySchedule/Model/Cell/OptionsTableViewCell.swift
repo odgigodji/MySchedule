@@ -30,7 +30,7 @@ class OptionsTableViewCell: UITableViewCell {
         let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
         repeatSwitch.isHidden = true
-        repeatSwitch.onTintColor = .pastelBlue()
+//        repeatSwitch.onTintColor = .pastelBlue()
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()
@@ -58,7 +58,7 @@ class OptionsTableViewCell: UITableViewCell {
         
         backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
         repeatSwitch.isHidden = (indexPath.section == 4 ? false : true)
-//        repeatSwitch.onTintColor = color
+        repeatSwitch.onTintColor = color
     }
     
     func tasksConfigure(nameArray: [String], indexPath: IndexPath, hexColor: String) {
