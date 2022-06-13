@@ -13,10 +13,11 @@ class ContactOptionsTableVC : UITableViewController {
     private let idOptionsContactHeader = "idOptionsContactHeader"
     
     let headerNamesArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE"]
-    let cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
+    var cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
     private var imageIsChanged = false
-    private var contactModel = ContactModel()
+    var contactModel = ContactModel()
+    var isEditingModel = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,8 @@ class ContactOptionsTableVC : UITableViewController {
         
         //MARK: - create saveButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        
+        print(contactModel)
     }
     
     @objc private func saveButtonTapped() {
@@ -83,7 +86,17 @@ class ContactOptionsTableVC : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactsCell, for: indexPath) as! OptionsTableViewCell
         
-        cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        //MARK: - isEditingModel
+        if isEditingModel {
+            cellNameArray = [
+                contactModel.contactName, contactModel.contactPhone, contactModel.contactMail,  contactModel.contactType, ""
+            ]
+            cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        } else {
+            cell.contactConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        }
+        
+        
         return cell
     }
     

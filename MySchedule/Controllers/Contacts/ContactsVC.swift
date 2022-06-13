@@ -6,6 +6,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftUI
 
 class ContactsVC : UIViewController {
     
@@ -93,6 +94,13 @@ class ContactsVC : UIViewController {
         navigationController?.pushViewController(contactOption, animated: true)
     }
     
+    @objc private func editingModel(contactModel: ContactModel) {
+        let contactOption = ContactOptionsTableVC()
+        contactOption.contactModel = contactModel
+        contactOption.isEditingModel = true
+        navigationController?.pushViewController(contactOption, animated: true)
+    }
+    
     private func pushControllers(viewController: UIViewController) {
         let vc = viewController
         navigationController?.navigationBar.topItem?.title = "Options"
@@ -131,7 +139,8 @@ extension ContactsVC : UITableViewDelegate, UITableViewDataSource {
    
     //MARK: - didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("lal")
+        let model = contactsArray[indexPath.row]
+        editingModel(contactModel: model)
     }
     
     //MARK: - trailingSwipeActionConfiguration

@@ -21,7 +21,6 @@ class OptionsTableViewCell: UITableViewCell {
     let nameCellLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "test"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
