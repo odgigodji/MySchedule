@@ -186,7 +186,7 @@ extension ScheduleVC {
         calendar.addConstraint(calendarHideConstraint)
         
         NSLayoutConstraint.activate([
-            calendar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            calendar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             calendar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             calendar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])

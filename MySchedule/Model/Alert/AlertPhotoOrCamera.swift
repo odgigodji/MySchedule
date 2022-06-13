@@ -13,8 +13,9 @@ extension UIViewController {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let camera = UIAlertAction(title: "Camera", style: .default) { _ in
-            let camera = UIImagePickerController.SourceType.camera
-            completionHandler(camera)
+            //MARK: - need fix camera function
+//            let camera = UIImagePickerController.SourceType.camera
+//            completionHandler(camera)
         }
         
         let photoLibrary = UIAlertAction(title: "Photo Library", style: .default) { _ in

@@ -14,14 +14,14 @@ class ScheduleOptionsTableVC : UITableViewController {
     
     let headerNamesArray = ["ДАТА И ВРЕМЯ", "ПРЕДМЕТ", "ПРЕПОДАВАТЕЛЬ", "ЦВЕТ", "ПЕРИОД"]
     
-    let cellNameArray = [["Дата", "Время"],
+    var cellNameArray = [["Дата", "Время"],
                          ["Имя", "Тип", "Корпус", "Аудитория"],
                          ["Teacher's name"],
                          [""],
                          ["Повторять каждые 7 дней"]]
     
     //MARK: - scheduleModel
-    private var scheduleModel = ScheduleModel()
+    var scheduleModel = ScheduleModel()
     
     var hexColorCell = "1A4766"
     
@@ -56,6 +56,7 @@ class ScheduleOptionsTableVC : UITableViewController {
             
             alertOK(title: "Success", message: nil)
             hexColorCell = "1A4766"
+            cellNameArray[2][0] = "Teacher's name"
             tableView.reloadData()
         }
     }
@@ -133,7 +134,7 @@ class ScheduleOptionsTableVC : UITableViewController {
         }
             
         //MARK: - Teacher's section
-        case [2, 0]: pushControllers(viewController: TeachersVC())
+        case [2, 0]: pushControllers(viewController: TeachersTableVC())
             
         //MARK: - Color's section
         case [3, 0]: pushControllers(viewController: ScheduleColorsVC())

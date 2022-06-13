@@ -63,13 +63,7 @@ class ContactsTableViewCell: UITableViewCell {
         self.nameLabel.text = model.contactName
         self.phoneLabel.text = model.contactPhone
         self.mailLabel.text = model.contactMail
-        
-//        guard let data = model.contactImage, let image = UIImage(data: data) else {
-//            self.contactImageView.image = UIImage(systemName: "person.fill")
-//            return
-//
-//        }
-//        self.contactImageView.image = image
+
         if let data = model.contactImage, let image = UIImage(data: data) {
             self.contactImageView.image = image
         } else {
