@@ -19,7 +19,7 @@
 - в правом верхнем углу кнопка ``+`` которая переносит нас на экран добавления предмета(``SсheduleOptionsTableVC``)
 
 ### TaskVC(cписок задач к конкретному уроку/предмету):
-https://i.ibb.co/dK5ygKq/ezgif-com-gif-maker-3.gif
+![taskVC](https://i.ibb.co/dK5ygKq/ezgif-com-gif-maker-3.gif)
 - TableView со списком всех задач на день
 
 ### ContactsVC(список контактов, связанных с учебой):
