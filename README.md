@@ -38,7 +38,9 @@
 #### TaskOptions:
 - 
 #### ContactOptions:
-- 
+![contactOption](https://i.ibb.co/8mcv3ss/ezgif-com-gif-maker-4.gif)
+- позволяет настроить имя, телефон, почту
+- выбрать фото
 #### TeachersOptions:
 - экран, появляется при выборе учитиля в ``ScheduleOptin`` содержит всех учителей
 #### ColorsOptions(for schedule and tasks)
