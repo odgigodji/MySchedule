@@ -1,4 +1,4 @@
-# MySchedule (in work..)
+# MySchedule ver 1.0
 <!-- ## schedule for school or university -->
 
 
