@@ -49,5 +49,5 @@
 #### TeachersVC:
 - экран, появляется при выборе учитиля в ``ScheduleOptin`` содержит всех учителей
 #### ColorsOptions(for schedule and tasks)
-- появляется при выборе цвета задачи или предмета в ``ScheduleOption`` или ``TaskOption``
+- появляется при выборе цвета задачи/предмета в ``ScheduleOption`` или ``TaskOption``
 - на выбор предлагается 8 тонов
