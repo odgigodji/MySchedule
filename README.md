@@ -43,7 +43,7 @@
 - позволяет выбрать дату, время, название предмета, а также задание 
 - цвет через ``ColorsOption``
 #### ContactOptions:
-![asdf](https://i.ibb.co/jTH5VB1/ezgif-com-gif-maker-7.gif)
+<!-- ![asdf](https://i.ibb.co/jTH5VB1/ezgif-com-gif-maker-7.gif) -->
 - позволяет настроить имя, телефон, почту
 - выбрать фото
 #### TeachersVC:
