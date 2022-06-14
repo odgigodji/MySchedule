@@ -38,7 +38,7 @@
 #### TaskOptions:
 - 
 #### ContactOptions:
-![contactOption](https://i.ibb.co/8mcv3ss/ezgif-com-gif-maker-4.gif)
+[contactOption](https://i.ibb.co/8mcv3ss/ezgif-com-gif-maker-4.gif)
 - позволяет настроить имя, телефон, почту
 - выбрать фото
 #### TeachersOptions:
